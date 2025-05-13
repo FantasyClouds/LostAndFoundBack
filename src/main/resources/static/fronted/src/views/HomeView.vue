@@ -1,45 +1,31 @@
 <template>
-  <AppContainer >
-    <NavSide/>
-    <div class="home-view">
-      <img alt="Vue logo" src="../assets/logo.png">
-      <h1>欢迎使用Vue.js</h1>
-      <table class="table">
-        <tbody>
-          <tr>
-            <td><router-link to="a_1"> 点击查看嵌套路由 </router-link> </td>
-            <td><router-link to="a_2"> 点击查看编程式路由 </router-link> </td>
-            <td><router-link to="a_3"> 点击 </router-link> </td>
-          </tr>
-          <tr>
-            <td><router-link to="students"> 点击查看教务系统 </router-link> </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </AppContainer>
+  <div class="home">
+    <Container>
+      <NavSide></NavSide>
+      <div class="home-view">
+        <img alt="Vue logo" src="../assets/logo.png">
+        <h1>欢迎使用Vue.js</h1>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><router-link to="a_1"> 点击查看嵌套路由 </router-link> </td>
+              <td><router-link to="a_2"> 点击查看编程式路由 </router-link> </td>
+              <td><router-link to="a_3"> 点击 </router-link> </td>
+            </tr>
+            <tr>
+              <td><router-link to="students"> 点击查看教务系统 </router-link> </td>
+              <td><router-link to="file"> 点击提交文件 </router-link> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </Container>
+  </div>
 </template>
 
-<script>
-
-import AppContainer from '../components/container.vue';
+<script lang="ts" setup>
 import NavSide from '../components/nav_side.vue';
-
-export default {
-  name: 'HomeView',
-  components: {
-    AppContainer,
-    NavSide
-  },
-  data(){
-    return{
-      a_1:'/a_1'
-    }
-  }
-}
-
-
-
+import Container from '../components/container.vue'
 </script>
 
 <style>

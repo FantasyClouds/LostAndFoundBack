@@ -6,7 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="新增文件上传">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/241.131ff513.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/349.13725e4a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/370.6fb4b648.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/413.75e8fc5e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/492.7bd844f5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/523.60a8a724.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/693.6dc04116.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/923.4b4e4922.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/app.c9f0e163.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/dist/js/chunk-vendors.e5f46c60.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fronted/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fronted/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fronted/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/components/main.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/components/nav_side.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fronted/src/components/nav_side.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/components/nav_side2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fronted/src/components/nav_side2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fronted/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fronted/src/views/HomeView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +149,7 @@
       <workItem from="1747104847816" duration="1212000" />
       <workItem from="1747119644999" duration="1416000" />
       <workItem from="1747123547080" duration="464000" />
-      <workItem from="1747124022285" duration="216000" />
+      <workItem from="1747124022285" duration="2288000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -172,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747124134227</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="新增文件上传">
+      <option name="closed" value="true" />
+      <created>1747124243396</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747124243396</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

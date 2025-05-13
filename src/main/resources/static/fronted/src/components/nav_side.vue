@@ -1,11 +1,6 @@
 <template>
   <div class="navSide">
     <nav>
-      <ColumnList>
-        <NavItem >
-
-        </NavItem>
-      </ColumnList>
       <ul class="navList">
         <li>
           <div class="navBox">
@@ -22,18 +17,13 @@
   </div>
 </template>
 
-<script>
-import ColumnList from '../components/column_list.vue';
-import NavItem from '../components/nav_item.vue';
+<script lang="ts">
+import {defineComponent} from 'vue';
 
-  export default {
-    name: 'NavSide',
-    components: {
-      ColumnList,
-      NavItem
-    }
-  }
-  
+export default defineComponent({
+  name: 'NavSide'
+});
+
 </script>
 
 <style>
