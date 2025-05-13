@@ -9,11 +9,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.example.test1.dao.entity")
 @SpringBootApplication
 public class Test1Application {
-    // This is the main method of the application.
-
-
+    // main method
     public static void main(String[] args) {
         SpringApplication.run(Test1Application.class, args);
     }
+
+
 
 }
