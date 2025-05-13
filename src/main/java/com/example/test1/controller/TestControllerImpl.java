@@ -88,14 +88,22 @@ public class TestControllerImpl implements TestController {
     }
 
     @PostMapping("/data/file")
-    public ResponseEntity<Response> getFile(@RequestParam("file") MultipartFile fileData){
+    public ResponseEntity<Response> getFile(@RequestParam("file") MultipartFile fileData) {
         System.out.println("TestControllerImpl.getFile()");
         System.out.println("FileData = " + fileData.getName());
-
         Response response = new Response();
-        response.code = 200;
-        response.message = "上传成功";
-        response.data = fileData.getName();
+        try {
+            String fileName = fileData.getOriginalFilename();
+
+            response.code = 200;
+            response.message = "上传成功";
+            response.data = fileName;
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.code = 500;
+            response.message = "上传失败";
+            response.data = e.getMessage();
+        }
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
