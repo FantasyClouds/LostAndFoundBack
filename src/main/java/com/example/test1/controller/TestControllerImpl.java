@@ -12,6 +12,7 @@ import com.example.test1.service.StudentOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class TestControllerImpl implements TestController {
@@ -86,6 +87,16 @@ public class TestControllerImpl implements TestController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @PostMapping("/data/file")
+    public ResponseEntity<Response> getFile(@RequestParam("file") MultipartFile fileData){
+        System.out.println("TestControllerImpl.getFile()");
+        System.out.println("FileData = " + fileData.getName());
 
+        Response response = new Response();
+        response.code = 200;
+        response.message = "上传成功";
+        response.data = fileData.getName();
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
 }
