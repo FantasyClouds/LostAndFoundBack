@@ -15,6 +15,7 @@
             <tr>
               <td><router-link to="students"> 点击查看教务系统 </router-link> </td>
               <td><router-link to="file"> 点击提交文件 </router-link> </td>
+              <td><router-link to="test"> 测试 </router-link> </td>
             </tr>
           </tbody>
         </table>
