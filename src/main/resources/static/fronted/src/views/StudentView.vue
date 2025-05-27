@@ -57,12 +57,13 @@
               <div class="content" >
                 <el-table :data="stuShow" @selection-change="selected" style="width: 100%">
                   <el-table-column type="selection"/>
-                  <el-table-column prop="id" label="学号" width="180" />
-                  <el-table-column prop="name" label="姓名" width="180" />
-                  <el-table-column prop="age" label="年龄" width="180" />
-                  <el-table-column prop="sex" label="性别" width="180"/>
-                  <el-table-column prop="time" label="录入时间"/>
+                  <el-table-column prop="Sno" label="学号" width="180" />
+                  <el-table-column prop="Sname" label="姓名" width="180" />
+                  <el-table-column prop="Sage" label="年龄" width="180" />
+                  <el-table-column prop="Ssex" label="性别" width="180"/>
+                  <el-table-column prop="enrollmentTime" label="录入时间"/>
                 </el-table>
+                
               </div>
             </el-main>
             <el-footer class="footer" height="30px">

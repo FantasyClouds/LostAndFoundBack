@@ -1,63 +1,85 @@
 package com.example.test1.dao.entity;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 @Entity
 @Table(name = "student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "姓名", nullable = false)
-    private String name;
+    @Column(name = "studentinternalid", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long studentInternalId;
 
-    @Column(name = "年龄")
-    private int age;
+    @Column(name = "sno", unique = true, nullable = false)
+    private Long sno;
 
-    @Column(name = "性别")
-    private String sex;
+    @Column(name = "sname")
+    private String sname;
 
-    @Column(name = "年级")
-    private int grade;
+    @Column(name = "sage")
+    private int sage;
 
+    @Column(name = "ssex")
+    private String ssex;
 
+    @Column(name = "grade")
+    private String grade;
+
+    @Column(name = "classs")
     private int classs;
-    private String time;
+
+    @Column(name = "enrollmenttime")
+    private String enrollmentTime;
 
     public Student() {}
-    public Student(/*Long id,*/ String name, int age, String sex, int grade, int classs, String time) {
-        //this.id = id;
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
+
+    public Student(Long id, String sname, int age, String sex, String grade, int classs, String enrollmentTime) {
+        this.sno = id;
+        this.sname = sname;
+        this.sage = age;
+        this.ssex = sex;
         this.grade = grade;
         this.classs = classs;
-        this.time = time;
+        this.enrollmentTime = enrollmentTime;
     }
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
-    public String getSex() { return sex; }
-    public void setSex(String sex) { this.sex = sex; }
-    public int getGrade() { return grade; }
-    public void setGrade(int grade) { this.grade = grade; }
+    @JsonProperty("Sno")
+    public Long getSno() { return sno; }
+    public void setSno(Long sno) { this.sno = sno; }
+    @JsonProperty("Sname")
+    public String getSname() { return sname; }
+    public void setSname(String sname) { this.sname = sname; }
+    @JsonProperty("Sage")
+    public int getSage() { return sage; }
+    public void setSage(int age) { this.sage = age; }
+    @JsonProperty("Ssex")
+    public String getSsex() { return ssex; }
+    public void setSsex(String sex) { this.ssex = sex; }
+    @JsonProperty("Grade")
+    public String getGrade() { return grade; }
+    public void setGrade(String grade) { this.grade = grade; }
+    @JsonProperty("Classs")
     public int getClasss() { return classs; }
     public void setClasss(int classs) { this.classs = classs; }
-    public String getTime() { return time; }
-    public void setTime(String time) { this.time = time; }
+    @JsonProperty("EnrollmentTime")
+    public String getEnrollmentTime() { return enrollmentTime; }
+    public void setEnrollmentTime(String enrollmentTime) { this.enrollmentTime = enrollmentTime; }
+    @JsonProperty("StudentInternalId")
+    public Long getStudentInternalId() { return studentInternalId; }
+    public void setStudentInternalId(Long studentInternalId) { this.studentInternalId = studentInternalId; }
+
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", sex='" + sex + '\'' +
+                "sno=" + sno +
+                ", sname='" + sname + '\'' +
+                ", sage=" + sage +
+                ", ssex='" + ssex + '\'' +
                 ", grade=" + grade +
                 ", classs=" + classs +
-                ", time='" + time + '\'' +
+                ", enrollmentTime='" + enrollmentTime + '\'' +
                 '}';
     }
 }
+;

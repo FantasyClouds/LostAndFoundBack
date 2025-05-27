@@ -10,9 +10,23 @@ import java.util.List;
 public interface Dao{
     List<Student> getStudentList();
 
+    //获取分页学生
+    List<Student> getStudentList(int offset, int perPage);
+
+    //获取学生总数
+    int getStudentCount();
+
     public List<Student> searchByName(String name);
 
-    void addStudent(Student student);
+    public void addStudent(Student student);
 
-    void deleteStudents(List<Student> studentList);
+    public void deleteStudents(List<Student> studentList);
+
+    //Amis框架单个修改学生信息
+    public boolean updateStudent(Student student);
+
+    //Amis框架单个删除学生信息
+    public boolean deleteStudentAmis(Long id);
+    //Amis框架添加单个学生信息
+    public boolean addStudentAmis(Student student);
 }

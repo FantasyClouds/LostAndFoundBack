@@ -7,6 +7,22 @@ import java.util.List;
 
 public interface StudentOperation {
     public List<Student> getStudentList();
+
     public void addStudent(Student student);
+
+    //获取分页数据
+    public List<Student> getStudentList(int page, int perPage);
+
+    //获取学生总数
+    public int getStudentCount();
+
     public boolean deleteStudent(List<Student> data);
+    //Amis框架单个更新学生
+    public boolean updateStudent(Student student);
+
+    //Amis框架单个删除学生
+    public boolean deleteStudentAmis(Long id);
+
+    //Amis框架添加单个学生
+    public boolean addStudentAmis(Student student);
 }
