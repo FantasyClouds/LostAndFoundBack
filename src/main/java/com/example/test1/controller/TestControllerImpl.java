@@ -3,6 +3,7 @@ import com.example.test1.dao.entity.Student;
 import com.example.test1.util.Response;
 import com.example.test1.util.ResponseCrud;
 import com.example.test1.util.TimestampUtils;
+import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -72,7 +73,7 @@ public class TestControllerImpl implements TestController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @PostMapping("/data/studentsDelete")
-    public ResponseEntity<Response<String>> deleteStudent(@RequestBody List<Student> studentData) {
+    public ResponseEntity<Response<String>> deleteStudent(@RequestBody List<Long> studentData) {
         System.out.println("studentData = " + studentData);
         System.out.println("Type: " + studentData.getClass());
         System.out.println("ElementType: " + studentData.get(0).getClass());
@@ -80,49 +81,25 @@ public class TestControllerImpl implements TestController {
         Response response = new Response();
         response.status = 200;
         response.msg = "删除成功";
-        response.data = studentOperation.deleteStudent(studentData);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
-    //Amis框架获取所有数据
-    @GetMapping("/data/testForm")
-    public ResponseEntity<Response<ResponseCrud<Student>>> testForm(
-            @RequestParam(defaultValue = "1") int page,
-            @RequestParam(defaultValue = "10") int perPage) {
-        System.out.println("TestControllerImpl.testForm() page=" + page + ", perPage=" + perPage);
-
-        Response<ResponseCrud<Student>> response = new Response<>();
-        // 获取分页数据
-        List<Student> studentList = studentOperation.getStudentList(page, perPage);
-        int total = studentOperation.getStudentCount();
-
-        ResponseCrud responseCrud = new ResponseCrud();
-        response.msg = "表格测试";
-        response.status = 0;
-        responseCrud.setRows(studentList);
-        responseCrud.setCount(total);
-        response.data = responseCrud;
-
-        System.out.println("Response data: " + responseCrud);
+       // response.data = studentOperation.deleteStudent(studentData);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     //Amis框架单个修改
-    @PostMapping("/data/testForm/Alter/{Sno}")
-    public ResponseEntity<Response<Boolean>> alterStudent(@PathVariable Long Sno, @RequestBody Map<String, Object> studentData) {
+    @PostMapping("/data/testForm/Alter/{StudentInternalId}")
+    public ResponseEntity<Response<Boolean>> alterStudent(@PathVariable Long StudentInternalId, @RequestBody Map<String, Object> studentData) {
         Student student = new Student();
         boolean result = true;
-        System.out.println("Alter Sno:" + Sno);
-        student.setSno(Sno);
+        System.out.println("Alter StudentInternalId:" + StudentInternalId);
+        student.setStudentInternalId(StudentInternalId);
+        student.setSno(Long.parseLong((String)studentData.get("Sno")));
         student.setSname((String) studentData.get("Sname"));
-        student.setSage((Integer) studentData.get("Sage"));
+        student.setSage((int) studentData.get("Sage"));
         student.setSsex((String) studentData.get("Ssex"));
         student.setGrade((String)studentData.get("Grade"));
         student.setClasss((Integer) studentData.get("Classs"));
         student.setEnrollmentTime((String) studentData.get("EnrollmentTime"));
-        System.out.println("Alter student: ");
-        for(String key : studentData.keySet()){
-            System.out.println(key + " = " + studentData.get(key) + "KeyClass:" + studentData.get(key).getClass() + "Value: " + studentData.get(key) + "ValueClass:" + studentData.get(key).getClass());
-        }
-        if(!studentOperation.updateStudent(student)){
+        System.out.println("Alter student: " + student);
+        if(studentOperation.updateStudent(student) != 0){
             result = false;
         }
         Response<Boolean> response = new Response<>();
@@ -159,12 +136,30 @@ public class TestControllerImpl implements TestController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     //Amis框架批量删除
-    @PostMapping("/data/testForm/studentsDeleteAmis/{ids}")
-    public void deleteStudentsAmis(@PathVariable Long[] ids) {
+    @PostMapping("/data/testForm/studentsDeleteAmis")
+    public ResponseEntity<Response<Boolean>> deleteStudentsAmis(@RequestBody Map<String, List<Long>> requestBody) {
         System.out.println("TestControllerImpl.deleteStudentsAmis()");
-        for (Long id : ids) {
+        Object studentInternalIds = requestBody.get("StudentInternalIds");
+        boolean result = true;
+        System.out.println("studentInternalIds = " + studentInternalIds);
+/*
+        for (Long id : studentInternalIds) {
             System.out.println("Student delete request:" + id);
+            if(!studentOperation.deleteStudentAmis(id)) {
+                result = false;
+            }
         }
+*/
+        Response<Boolean> response = new Response<>();
+        if(result) {
+            response.status = 0;
+            response.msg = "批量删除成功";
+        } else {
+            response.status = 500;
+            response.msg = "部分删除失败";
+        }
+        response.data = result;
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
     //Amis框架添加单个学生信息
     @PostMapping("/data/testForm/Add/{Sno}")
@@ -177,7 +172,7 @@ public class TestControllerImpl implements TestController {
         boolean result = true;
         student.setSno(Sno);
         student.setSname((String) studentData.get("Sname"));
-        student.setSage(Integer.parseInt((String) studentData.get("Sage")));
+        student.setSage((Integer) studentData.get("Sage"));
         student.setSsex((String) studentData.get("Ssex"));
         student.setGrade((String) studentData.get("Grade"));
         student.setClasss((Integer) studentData.get("Classs"));
@@ -197,5 +192,38 @@ public class TestControllerImpl implements TestController {
         }
         response.data = result;
         return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    //Amis搜索
+    @GetMapping("/data/testForm/search")
+    public ResponseEntity<Response<ResponseCrud<Student>>> searchStudent(
+            @RequestParam(required = false) Long sno,
+            @RequestParam(required = false) String sname,
+            @RequestParam(required = false) Integer sage,
+            @RequestParam(required = false) String ssex,
+            @RequestParam(required = false) String grade,
+            @RequestParam(required = false) Integer classs,
+            @RequestParam(required = false) Boolean isAnd,
+            @RequestParam(defaultValue = "1") Integer page,
+            @RequestParam(defaultValue = "10") Integer perPage) {
+        System.out.println("TestControllerImpl.searchStudent()");
+        System.out.println(String.format("Search params - sno: %s, sname: %s, sage: %s, ssex: %s, grade: %s, classs: %s, isAnd: %s",
+                sno, sname, sage, ssex, grade, classs, isAnd));
+
+        Response<ResponseCrud<Student>> response = new Response<>();
+        List<Student> studentList = studentOperation.searchStudent(sno, sname, sage, ssex, grade, classs, isAnd);
+        int total = studentList.size();
+
+        ResponseCrud responseCrud = new ResponseCrud();
+
+        response.msg = "搜索结果";
+        response.status = 0;
+        response.data = responseCrud;
+        responseCrud.setRows(studentList);
+        responseCrud.setCount(total);
+        System.out.println("total:" + total);
+
+        return new ResponseEntity<>(response, HttpStatus.OK);
+
+
     }
 }

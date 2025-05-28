@@ -29,4 +29,6 @@ public interface Dao{
     public boolean deleteStudentAmis(Long id);
     //Amis框架添加单个学生信息
     public boolean addStudentAmis(Student student);
+    //Amis框架查询学生信息
+    public List<Student> searchStudent(Long sno, String sname, Integer sage, String ssex, String grade, Integer classs, Boolean isAnd);
 }

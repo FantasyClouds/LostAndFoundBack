@@ -1,28 +1,86 @@
-package com.example.test1.service;
+package com.example.test1.dao.entity;
+
+import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-import com.example.test1.dao.entity.Student;
+@Entity
+@Table(name = "student")
+public class Student {
+    @Id
+    @Column(name = "studentinternalid", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long studentInternalId;
 
-import java.util.List;
+    @Column(name = "sno", unique = true, nullable = false)
+    private Long sno;
 
-public interface StudentOperation {
-    public List<Student> getStudentList();
+    @Column(name = "sname")
+    private String sname;
 
-    public void addStudent(Student student);
+    @Column(name = "sage")
+    private int sage;
 
-    //获取分页数据
-    public List<Student> getStudentList(int page, int perPage);
+    @Column(name = "ssex")
+    private String ssex;
 
-    //获取学生总数
-    public int getStudentCount();
+    @Column(name = "grade")
+    private String grade;
 
-    public boolean deleteStudent(List<Student> data);
-    //Amis框架单个更新学生
-    public boolean updateStudent(Student student);
+    @Column(name = "classs")
+    private int classs;
 
-    //Amis框架单个删除学生
-    public boolean deleteStudentAmis(Long id);
+    @Column(name = "enrollmenttime")
+    private String enrollmentTime;
 
-    //Amis框架添加单个学生
-    public boolean addStudentAmis(Student student);
+    public Student() {}
+
+    public Student(Long id, String sname, int age, String sex, String grade, int classs, String enrollmentTime) {
+        this.sno = id;
+        this.sname = sname;
+        this.sage = age;
+        this.ssex = sex;
+        this.grade = grade;
+        this.classs = classs;
+        this.enrollmentTime = enrollmentTime;
+    }
+    @JsonProperty("Sno")
+    public Long getSno() { return sno; }
+    public void setSno(Long sno) { this.sno = sno; }
+    @JsonProperty("Sname")
+    public String getSname() { return sname; }
+    public void setSname(String sname) { this.sname = sname; }
+    @JsonProperty("Sage")
+    public int getSage() { return sage; }
+    public void setSage(int age) { this.sage = age; }
+    @JsonProperty("Ssex")
+    public String getSsex() { return ssex; }
+    public void setSsex(String sex) { this.ssex = sex; }
+    @JsonProperty("Grade")
+    public String getGrade() { return grade; }
+    public void setGrade(String grade) { this.grade = grade; }
+    @JsonProperty("Classs")
+    public int getClasss() { return classs; }
+    public void setClasss(int classs) { this.classs = classs; }
+    @JsonProperty("EnrollmentTime")
+    public String getEnrollmentTime() { return enrollmentTime; }
+    public void setEnrollmentTime(String enrollmentTime) { this.enrollmentTime = enrollmentTime; }
+    @JsonProperty("StudentInternalId")
+    public Long getStudentInternalId() { return studentInternalId; }
+    public void setStudentInternalId(Long studentInternalId) { this.studentInternalId = studentInternalId; }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "StudentInternalId=" + studentInternalId +
+                "sno=" + sno +
+                ", sname='" + sname + '\'' +
+                ", sage=" + sage +
+                ", ssex='" + ssex + '\'' +
+                ", grade=" + grade +
+                ", classs=" + classs +
+                ", enrollmentTime='" + enrollmentTime + '\'' +
+                '}';
+    }
 }
+;

@@ -60,16 +60,16 @@ public class StudentOperationImpl implements StudentOperation {
         return true;
     }
 
-
     //Amis框架单个修改学生
     @Transactional
-    public boolean updateStudent(Student student){
+    public int updateStudent(Student student){
         if(dao.updateStudent(student)){
-            return true;
+            return 0;
         }
-        return false;
+        return 1;
     }
     //Amis框架删除单个学生
+    @Transactional
     public boolean deleteStudentAmis(Long id) {
         if(dao.deleteStudentAmis(id)){
             return true;
@@ -77,10 +77,23 @@ public class StudentOperationImpl implements StudentOperation {
         return false;
     }
     //Amis框架添加单个学生
+    @Transactional
     public boolean addStudentAmis(Student student){
         if(dao.addStudentAmis(student)){
             return true;
         }
         return false;
+    }
+
+    @Transactional
+    public List<Student> searchStudent(Long sno, String name, Integer sage, String ssex, String grade, Integer classs, Boolean isAnd){
+        System.out.println("TestServiceImpl.searchStudent()");
+        if(isAnd == null){
+            return dao.getStudentList();
+        }
+        else if(sno == null && (name == null || name.isEmpty()) && (ssex == null || ssex.isEmpty()) && (grade == null || grade.isEmpty()) && classs == null){
+            return dao.getStudentList();
+        }
+        return dao.searchStudent(sno, name, sage, ssex, grade, classs, isAnd);
     }
 }
