@@ -146,7 +146,8 @@ const schema = {
             "columns" : [
               {
                 "name" : "Sno",
-                "label" : "ID"
+                "label" : "ID",
+                "sortable": true
               },
               {
                 "name" : "Sname",
@@ -256,6 +257,7 @@ const schema = {
               {
                 "label": "删除",
                 "actionType": "ajax",
+                "level": "danger",
                 "api": {
                   "method": "post",
                   "url": "http://localhost:8888/data/testForm/studentsDeleteAmis",
@@ -270,6 +272,7 @@ const schema = {
                 "label": "新增",
                 "type": "button",
                 "actionType": "dialog",
+                "level": "primary",
                 "dialog": {
                   "title": "新增信息",
                   "body": {

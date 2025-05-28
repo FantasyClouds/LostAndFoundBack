@@ -3,7 +3,7 @@ import com.example.test1.dao.entity.Student;
 import com.example.test1.util.Response;
 import com.example.test1.util.ResponseCrud;
 import com.example.test1.util.TimestampUtils;
-import org.springframework.aop.scope.ScopedProxyUtils;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -91,9 +91,9 @@ public class TestControllerImpl implements TestController {
         boolean result = true;
         System.out.println("Alter StudentInternalId:" + StudentInternalId);
         student.setStudentInternalId(StudentInternalId);
-        student.setSno(Long.parseLong((String)studentData.get("Sno")));
+        student.setSno(((Integer)studentData.get("Sno")).longValue());
         student.setSname((String) studentData.get("Sname"));
-        student.setSage((int) studentData.get("Sage"));
+        student.setSage((Integer) studentData.get("Sage"));
         student.setSsex((String) studentData.get("Ssex"));
         student.setGrade((String)studentData.get("Grade"));
         student.setClasss((Integer) studentData.get("Classs"));
