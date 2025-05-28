@@ -25,8 +25,11 @@ public interface TestController {
     @PostMapping("/data/testForm/studentDeleteAmis/{Sno}")
     public ResponseEntity<Response<Boolean>> deleteStudentAmis(@PathVariable Long id);
 
-    //Amis添加单个学生
+    //Amis删除多个学生
+    @PostMapping("/data/testForm/studentsDeleteAmis")
+    public ResponseEntity<Response<Boolean>> deleteStudentsAmis(@RequestBody List<Long> requestBody);
 
+    //Amis添加单个学生
     @PostMapping("/data/testForm/Add/{Sno}")
     public ResponseEntity<Response<Boolean>> addStudentAmis(@PathVariable Long id,
                                                             @RequestBody Map<String, Object> studentData);

@@ -259,13 +259,7 @@ const schema = {
                 "api": {
                   "method": "post",
                   "url": "http://localhost:8888/data/testForm/studentsDeleteAmis",
-                  "data": {
-                    "StudentInternalIds": {
-                      "$crud": {
-                        "ID" : "${sno}"
-                      }
-                    }
-                  }
+                  "data": "${items|pick:Sno}"
                 },
                 "confirmText": "确认删除选中项？"
               }

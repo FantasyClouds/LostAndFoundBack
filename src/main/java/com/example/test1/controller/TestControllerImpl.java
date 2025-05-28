@@ -81,7 +81,7 @@ public class TestControllerImpl implements TestController {
         Response response = new Response();
         response.status = 200;
         response.msg = "删除成功";
-       // response.data = studentOperation.deleteStudent(studentData);
+        // response.data = studentOperation.deleteStudent(studentData);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     //Amis框架单个修改
@@ -137,19 +137,16 @@ public class TestControllerImpl implements TestController {
     }
     //Amis框架批量删除
     @PostMapping("/data/testForm/studentsDeleteAmis")
-    public ResponseEntity<Response<Boolean>> deleteStudentsAmis(@RequestBody Map<String, List<Long>> requestBody) {
+    public ResponseEntity<Response<Boolean>> deleteStudentsAmis(@RequestBody List<Long> studentIds) {
         System.out.println("TestControllerImpl.deleteStudentsAmis()");
-        Object studentInternalIds = requestBody.get("StudentInternalIds");
         boolean result = true;
-        System.out.println("studentInternalIds = " + studentInternalIds);
-/*
-        for (Long id : studentInternalIds) {
+        System.out.println("studentIds = " + studentIds);
+        for (Long id : studentIds) {
             System.out.println("Student delete request:" + id);
             if(!studentOperation.deleteStudentAmis(id)) {
                 result = false;
             }
         }
-*/
         Response<Boolean> response = new Response<>();
         if(result) {
             response.status = 0;
