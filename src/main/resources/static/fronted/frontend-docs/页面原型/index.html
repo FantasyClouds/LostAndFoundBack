@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广西民族大学失物招领系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .iframe-container {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .iframe-title {
+            background: #f3f4f6;
+            padding: 10px 15px;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <!-- 系统标题 -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-blue-600 mb-2">
+                <i class="fas fa-search mr-3"></i>
+                广西民族大学失物招领系统
+            </h1>
+            <p class="text-gray-600 text-lg">PC端Web应用原型展示</p>
+        </div>
+
+        <!-- 失物浏览主页 -->
+        <div class="iframe-container">
+            <div class="iframe-title">
+                <i class="fas fa-home mr-2"></i>
+                失物浏览主页 (home.html)
+            </div>
+            <iframe src="home.html" height="800"></iframe>
+        </div>
+
+        <!-- 登录/注册页面 -->
+        <div class="iframe-container">
+            <div class="iframe-title">
+                <i class="fas fa-sign-in-alt mr-2"></i>
+                登录/注册页面 (login.html)
+            </div>
+            <iframe src="login.html" height="600"></iframe>
+        </div>
+
+        <!-- 失物发布页面 -->
+        <div class="iframe-container">
+            <div class="iframe-title">
+                <i class="fas fa-plus-circle mr-2"></i>
+                失物发布页面 (publish.html)
+            </div>
+            <iframe src="publish.html" height="700"></iframe>
+        </div>
+
+        <!-- 个人中心页面 -->
+        <div class="iframe-container">
+            <div class="iframe-title">
+                <i class="fas fa-user mr-2"></i>
+                个人中心页面 (profile.html)
+            </div>
+            <iframe src="profile.html" height="600"></iframe>
+        </div>
+
+        <!-- 普通管理员后台页面 -->
+        <div class="iframe-container">
+            <div class="iframe-title">
+                <i class="fas fa-cogs mr-2"></i>
+                普通管理员后台页面 (admin.html)
+            </div>
+            <iframe src="admin.html" height="700"></iframe>
+        </div>
+
+        <!-- 页脚信息 -->
+        <div class="text-center mt-12 py-6 border-t border-gray-200">
+            <p class="text-gray-500">
+                <i class="fas fa-university mr-2"></i>
+                广西民族大学失物招领系统 - 页面原型展示
+            </p>
+            <p class="text-sm text-gray-400 mt-2">
+                技术栈: HTML5 + TailwindCSS + FontAwesome
+            </p>
+        </div>
+    </div>
+</body>
+</html>
