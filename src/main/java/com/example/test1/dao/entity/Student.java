@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Student {
 
     @TableId(type = IdType.AUTO)
-    private Long studentInternalId;
+    private Long student_internal_id;
 
     @TableField
     private Long sno;
@@ -32,7 +32,7 @@ public class Student {
     private int classs;
 
     @TableField
-    private String enrollmentTime;
+    private String enrollment_time;
 
     public Student() {}
 
@@ -43,7 +43,7 @@ public class Student {
         this.ssex = sex;
         this.grade = grade;
         this.classs = classs;
-        this.enrollmentTime = enrollmentTime;
+        this.enrollment_time = enrollment_time;
     }
     @JsonProperty("Sno")
     public Long getSno() { return sno; }
@@ -64,23 +64,23 @@ public class Student {
     public int getClasss() { return classs; }
     public void setClasss(int classs) { this.classs = classs; }
     @JsonProperty("EnrollmentTime")
-    public String getEnrollmentTime() { return enrollmentTime; }
-    public void setEnrollmentTime(String enrollmentTime) { this.enrollmentTime = enrollmentTime; }
+    public String getEnrollmentTime() { return enrollment_time; }
+    public void setEnrollmentTime(String enrollmentTime) { this.enrollment_time = enrollmentTime; }
     @JsonProperty("StudentInternalId")
-    public Long getStudentInternalId() { return studentInternalId; }
-    public void setStudentInternalId(Long studentInternalId) { this.studentInternalId = studentInternalId; }
+    public Long getStudentInternalId() { return student_internal_id; }
+    public void setStudentInternalId(Long studentInternalId) { this.student_internal_id = studentInternalId; }
 
     @Override
     public String toString() {
         return "Student{" +
-                "StudentInternalId=" + studentInternalId +
+                "StudentInternalId=" + student_internal_id +
                 "sno=" + sno +
                 ", sname='" + sname + '\'' +
                 ", sage=" + sage +
                 ", ssex='" + ssex + '\'' +
                 ", grade=" + grade +
                 ", classs=" + classs +
-                ", enrollmentTime='" + enrollmentTime + '\'' +
+                ", enrollmentTime='" + enrollment_time + '\'' +
                 '}';
     }
 }
