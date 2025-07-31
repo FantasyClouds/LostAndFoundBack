@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="新增文件上传">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="添加自动生成数据表功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +146,7 @@
       <workItem from="1750927715001" duration="2137000" />
       <workItem from="1750934084036" duration="12000" />
       <workItem from="1753938052925" duration="261000" />
-      <workItem from="1753943295356" duration="1917000" />
+      <workItem from="1753943295356" duration="2346000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -200,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747124243396</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="添加自动生成数据表功能">
+      <option name="closed" value="true" />
+      <created>1753945567601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753945567601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +225,7 @@
     <MESSAGE value="初始的上传" />
     <MESSAGE value="test" />
     <MESSAGE value="新增文件上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增文件上传" />
+    <MESSAGE value="添加自动生成数据表功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加自动生成数据表功能" />
   </component>
 </project>
