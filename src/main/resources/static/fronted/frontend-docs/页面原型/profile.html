@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - 广西民族大学失物招领系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-blue-600">
+                            <i class="fas fa-search mr-2"></i>
+                            广西民族大学失物招领
+                        </h1>
+                    </div>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="#"
+                            class="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium">浏览失物</a>
+                        <a href="#"
+                            class="text-gray-500 hover:text-gray-700 px-1 pt-1 pb-4 text-sm font-medium">发布信息</a>
+                        <a href="#"
+                            class="text-blue-600 border-b-2 border-blue-600 px-1 pt-1 pb-4 text-sm font-medium">个人中心</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <img class="h-8 w-8 rounded-full"
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                            alt="用户头像">
+                        <span class="text-sm text-gray-700">张同学</span>
+                        <i class="fas fa-chevron-down text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- 左侧边栏 -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <!-- 用户信息卡片 -->
+                    <div class="text-center mb-6">
+                        <div class="relative inline-block">
+                            <img class="w-20 h-20 rounded-full mx-auto"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+                                alt="用户头像">
+                            <button
+                                class="absolute bottom-0 right-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-blue-700">
+                                <i class="fas fa-camera"></i>
+                            </button>
+                        </div>
+                        <h3 class="mt-3 text-lg font-semibold text-gray-900">张同学</h3>
+                        <p class="text-sm text-gray-600">计算机与信息工程学院</p>
+                        <p class="text-sm text-gray-500">学号：2021001234</p>
+                    </div>
+
+                    <!-- 统计信息 -->
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="text-center p-3 bg-blue-50 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-600">5</div>
+                            <div class="text-xs text-blue-600">发布记录</div>
+                        </div>
+                        <div class="text-center p-3 bg-green-50 rounded-lg">
+                            <div class="text-2xl font-bold text-green-600">3</div>
+                            <div class="text-xs text-green-600">成功匹配</div>
+                        </div>
+                    </div>
+
+                    <!-- 导航菜单 -->
+                    <nav class="space-y-2">
+                        <a href="#"
+                            class="nav-item flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg"
+                            data-tab="overview">
+                            <i class="fas fa-tachometer-alt mr-3"></i>
+                            概览
+                        </a>
+                        <a href="#"
+                            class="nav-item flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg"
+                            data-tab="published">
+                            <i class="fas fa-list mr-3"></i>
+                            我的发布
+                        </a>
+                        <a href="#"
+                            class="nav-item flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg"
+                            data-tab="orders">
+                            <i class="fas fa-shopping-cart mr-3"></i>
+                            我的订单
+                        </a>
+                        <a href="#"
+                            class="nav-item flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg"
+                            data-tab="messages">
+                            <i class="fas fa-envelope mr-3"></i>
+                            消息通知
+                            <span class="ml-auto bg-red-500 text-white text-xs rounded-full px-2 py-1">2</span>
+                        </a>
+                        <a href="#"
+                            class="nav-item flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg"
+                            data-tab="settings">
+                            <i class="fas fa-cog mr-3"></i>
+                            账户设置
+                        </a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- 右侧内容区域 -->
+            <div class="lg:col-span-3">
+                <!-- 概览页面 -->
+                <div id="overview" class="tab-content">
+                    <!-- 快捷操作 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                            <i class="fas fa-bolt mr-2 text-yellow-500"></i>
+                            快捷操作
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <button
+                                class="flex items-center justify-center p-4 border-2 border-dashed border-blue-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-colors">
+                                <div class="text-center">
+                                    <i class="fas fa-plus text-blue-500 text-2xl mb-2"></i>
+                                    <div class="text-sm font-medium text-blue-600">发布失物招领</div>
+                                </div>
+                            </button>
+                            <button
+                                class="flex items-center justify-center p-4 border-2 border-dashed border-orange-300 rounded-lg hover:border-orange-500 hover:bg-orange-50 transition-colors">
+                                <div class="text-center">
+                                    <i class="fas fa-search text-orange-500 text-2xl mb-2"></i>
+                                    <div class="text-sm font-medium text-orange-600">发布寻物启事</div>
+                                </div>
+                            </button>
+                            <button
+                                class="flex items-center justify-center p-4 border-2 border-dashed border-green-300 rounded-lg hover:border-green-500 hover:bg-green-50 transition-colors">
+                                <div class="text-center">
+                                    <i class="fas fa-eye text-green-500 text-2xl mb-2"></i>
+                                    <div class="text-sm font-medium text-green-600">浏览失物信息</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 最近活动 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                            <i class="fas fa-clock mr-2 text-blue-500"></i>
+                            最近活动
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-medium text-gray-900">您发布的"蓝色钱包"已被成功认领</p>
+                                    <p class="text-xs text-gray-500">2小时前</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-shopping-cart text-white"></i>
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-medium text-gray-900">您对"黑色手机"的认领申请已提交</p>
+                                    <p class="text-xs text-gray-500">5小时前</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-yellow-50 rounded-lg">
+                                <div class="w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-plus text-white"></i>
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-medium text-gray-900">您发布了新的失物招领"红色背包"</p>
+                                    <p class="text-xs text-gray-500">1天前</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 数据统计 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-hand-holding text-blue-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm font-medium text-gray-600">失物招领</p>
+                                    <p class="text-2xl font-bold text-gray-900">3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-search text-orange-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm font-medium text-gray-600">寻物启事</p>
+                                    <p class="text-2xl font-bold text-gray-900">2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-heart text-green-600 text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm font-medium text-gray-600">帮助他人</p>
+                                    <p class="text-2xl font-bold text-gray-900">3</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的发布页面 -->
+                <div id="published" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-900">
+                                    <i class="fas fa-list mr-2 text-blue-500"></i>
+                                    我的发布记录
+                                </h3>
+                                <div class="flex space-x-2">
+                                    <button class="px-3 py-1 bg-blue-600 text-white rounded-lg text-sm">全部</button>
+                                    <button
+                                        class="px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">失物招领</button>
+                                    <button
+                                        class="px-3 py-1 bg-gray-200 text-gray-700 rounded-lg text-sm hover:bg-gray-300">寻物启事</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <!-- 发布记录1 -->
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=80&h=80&fit=crop"
+                                            alt="蓝色钱包" class="w-16 h-16 object-cover rounded-lg">
+                                        <div class="flex-1">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="font-semibold text-gray-900">蓝色钱包</h4>
+                                                <span
+                                                    class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
+                                                    <i class="fas fa-check mr-1"></i>已认领
+                                                </span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">文科楼3层301教室门口捡到</p>
+                                            <div class="flex items-center justify-between mt-2">
+                                                <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                                    <span><i class="fas fa-calendar mr-1"></i>2024-01-15</span>
+                                                    <span><i class="fas fa-eye mr-1"></i>23次浏览</span>
+                                                    <span><i class="fas fa-shopping-cart mr-1"></i>1次申请</span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                    <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                                        <i class="fas fa-eye mr-1"></i>查看详情
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 发布记录2 -->
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=80&h=80&fit=crop"
+                                            alt="红色背包" class="w-16 h-16 object-cover rounded-lg">
+                                        <div class="flex-1">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="font-semibold text-gray-900">红色双肩背包</h4>
+                                                <span
+                                                    class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                                                    <i class="fas fa-clock mr-1"></i>进行中
+                                                </span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">理科楼1层大厅捡到</p>
+                                            <div class="flex items-center justify-between mt-2">
+                                                <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                                    <span><i class="fas fa-calendar mr-1"></i>2024-01-14</span>
+                                                    <span><i class="fas fa-eye mr-1"></i>15次浏览</span>
+                                                    <span><i class="fas fa-shopping-cart mr-1"></i>0次申请</span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                    <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                                        <i class="fas fa-edit mr-1"></i>编辑
+                                                    </button>
+                                                    <button class="text-red-600 hover:text-red-800 text-sm">
+                                                        <i class="fas fa-trash mr-1"></i>删除
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 发布记录3 -->
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <div class="flex items-start space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=80&h=80&fit=crop"
+                                            alt="黑色手机" class="w-16 h-16 object-cover rounded-lg">
+                                        <div class="flex-1">
+                                            <div class="flex items-center justify-between">
+                                                <h4 class="font-semibold text-gray-900">黑色iPhone手机</h4>
+                                                <span
+                                                    class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                                                    <i class="fas fa-search mr-1"></i>寻物启事
+                                                </span>
+                                            </div>
+                                            <p class="text-sm text-gray-600 mt-1">图书馆2层阅览室丢失</p>
+                                            <div class="flex items-center justify-between mt-2">
+                                                <div class="flex items-center space-x-4 text-xs text-gray-500">
+                                                    <span><i class="fas fa-calendar mr-1"></i>2024-01-13</span>
+                                                    <span><i class="fas fa-eye mr-1"></i>32次浏览</span>
+                                                    <span><i class="fas fa-phone mr-1"></i>2条线索</span>
+                                                </div>
+                                                <div class="flex space-x-2">
+                                                    <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                                        <i class="fas fa-eye mr-1"></i>查看线索
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 我的订单页面 -->
+                <div id="orders" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-lg font-semibold text-gray-900">
+                                <i class="fas fa-shopping-cart mr-2 text-blue-500"></i>
+                                我的订单记录
+                            </h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="space-y-4">
+                                <!-- 订单记录1 -->
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-sm font-medium text-gray-900">订单号：LF2024011501</span>
+                                            <span
+                                                class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">已完成</span>
+                                        </div>
+                                        <span class="text-sm text-gray-500">2024-01-15 14:30</span>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop"
+                                            alt="学生证" class="w-12 h-12 object-cover rounded-lg">
+                                        <div class="flex-1">
+                                            <h4 class="font-medium text-gray-900">学生证</h4>
+                                            <p class="text-sm text-gray-600">发布者：刘同学</p>
+                                            <p class="text-sm text-gray-600">联系方式：138****5678</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                                <i class="fas fa-star mr-1"></i>评价
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 订单记录2 -->
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-sm font-medium text-gray-900">订单号：LF2024011402</span>
+                                            <span
+                                                class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">待确认</span>
+                                        </div>
+                                        <span class="text-sm text-gray-500">2024-01-14 16:20</span>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=60&h=60&fit=crop"
+                                            alt="黑色眼镜" class="w-12 h-12 object-cover rounded-lg">
+                                        <div class="flex-1">
+                                            <h4 class="font-medium text-gray-900">黑框眼镜</h4>
+                                            <p class="text-sm text-gray-600">发布者：孙同学</p>
+                                            <p class="text-sm text-gray-600">状态：等待发布者确认</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <button class="text-red-600 hover:text-red-800 text-sm">
+                                                <i class="fas fa-times mr-1"></i>取消申请
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 消息通知页面 -->
+                <div id="messages" class="tab-content hidden">
+                    <div class="bg-white rounded-lg shadow-sm">
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <h3 class="text-lg font-semibold text-gray-900">
+                                    <i class="fas fa-envelope mr-2 text-blue-500"></i>
+                                    消息通知
+                                </h3>
+                                <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                    <i class="fas fa-check-double mr-1"></i>全部已读
+                                </button>
+                            </div>
+                        </div>
+                        <div class="divide-y divide-gray-200">
+                            <!-- 消息1 -->
+                            <div class="p-4 hover:bg-gray-50">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between">
+                                            <h4 class="text-sm font-medium text-gray-900">认领申请通知</h4>
+                                            <span class="text-xs text-gray-500">2小时前</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-1">有用户申请认领您发布的"蓝色钱包"，请及时处理。</p>
+                                        <div class="mt-2 flex space-x-2">
+                                            <button class="text-blue-600 hover:text-blue-800 text-xs">
+                                                <i class="fas fa-eye mr-1"></i>查看详情
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 消息2 -->
+                            <div class="p-4 hover:bg-gray-50">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-red-500 rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between">
+                                            <h4 class="text-sm font-medium text-gray-900">系统通知</h4>
+                                            <span class="text-xs text-gray-500">1天前</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-1">您的寻物启事"黑色iPhone手机"有新的线索提供，请查看。</p>
+                                        <div class="mt-2 flex space-x-2">
+                                            <button class="text-blue-600 hover:text-blue-800 text-xs">
+                                                <i class="fas fa-eye mr-1"></i>查看线索
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 消息3 -->
+                            <div class="p-4 hover:bg-gray-50 opacity-60">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-gray-300 rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between">
+                                            <h4 class="text-sm font-medium text-gray-900">认领成功通知</h4>
+                                            <span class="text-xs text-gray-500">3天前</span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-1">恭喜！您发布的"红色背包"已被成功认领。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 账户设置页面 -->
+                <div id="settings" class="tab-content hidden">
+                    <div class="space-y-6">
+                        <!-- 基本信息设置 -->
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                                <i class="fas fa-user mr-2 text-blue-500"></i>
+                                基本信息
+                            </h3>
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">真实姓名</label>
+                                        <input type="text" value="张同学"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">学号/工号</label>
+                                        <input type="text" value="2021001234"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                                            readonly>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">手机号码</label>
+                                        <input type="tel" value="138****5678"
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">学院/部门</label>
+                                        <select
+                                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                            <option selected>计算机与信息工程学院</option>
+                                            <option>管理学院</option>
+                                            <option>外国语学院</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="submit"
+                                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                                        <i class="fas fa-save mr-2"></i>保存修改
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- 密码修改 -->
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                                <i class="fas fa-lock mr-2 text-blue-500"></i>
+                                修改密码
+                            </h3>
+                            <form class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">当前密码</label>
+                                    <input type="password"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">新密码</label>
+                                    <input type="password"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">确认新密码</label>
+                                    <input type="password"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="submit"
+                                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                                        <i class="fas fa-key mr-2"></i>修改密码
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- 通知设置 -->
+                        <div class="bg-white rounded-lg shadow-sm p-6">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-4">
+                                <i class="fas fa-bell mr-2 text-blue-500"></i>
+                                通知设置
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-900">认领申请通知</h4>
+                                        <p class="text-sm text-gray-500">当有人申请认领您的失物时通知您</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer">
+                                        <div
+                                            class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-900">线索提供通知</h4>
+                                        <p class="text-sm text-gray-500">当有人为您的寻物启事提供线索时通知您</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" checked class="sr-only peer">
+                                        <div
+                                            class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-900">系统公告通知</h4>
+                                        <p class="text-sm text-gray-500">接收系统重要公告和更新通知</p>
+                                    </div>
+                                    <label class="relative inline-flex items-center cursor-pointer">
+                                        <input type="checkbox" class="sr-only peer">
+                                        <div
+                                            class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 导航切换功能
+            const navItems = document.querySelectorAll('.nav-item');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetTab = this.dataset.tab;
+
+                    // 移除所有导航项的激活状态
+                    navItems.forEach(nav => {
+                        nav.className = 'nav-item flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-lg';
+                    });
+
+                    // 激活当前导航项
+                    this.className = 'nav-item flex items-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg';
+
+                    // 隐藏所有标签页内容
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // 显示目标标签页内容
+                    document.getElementById(targetTab).classList.remove('hidden');
+                });
+            });
+
+            // 表单提交处理
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('设置已保存！');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

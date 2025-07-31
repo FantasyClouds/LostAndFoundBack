@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录注册 - 广西民族大学失物招领系统</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- 系统标题 -->
+            <div class="text-center">
+                <div class="mx-auto h-12 w-12 bg-blue-600 rounded-full flex items-center justify-center">
+                    <i class="fas fa-search text-white text-xl"></i>
+                </div>
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                    广西民族大学失物招领系统
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    帮助师生找回丢失物品，传递校园温暖
+                </p>
+            </div>
+
+            <!-- 登录注册切换卡片 -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <!-- 切换按钮 -->
+                <div class="flex mb-6">
+                    <button id="loginTab"
+                        class="flex-1 py-2 px-4 text-center font-medium rounded-l-lg bg-blue-600 text-white">
+                        <i class="fas fa-sign-in-alt mr-2"></i>
+                        登录
+                    </button>
+                    <button id="registerTab"
+                        class="flex-1 py-2 px-4 text-center font-medium rounded-r-lg bg-gray-200 text-gray-700 hover:bg-gray-300">
+                        <i class="fas fa-user-plus mr-2"></i>
+                        注册
+                    </button>
+                </div>
+
+                <!-- 登录表单 -->
+                <div id="loginForm" class="space-y-6">
+                    <div>
+                        <label for="loginUsername" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-user mr-2 text-blue-500"></i>
+                            学号/工号
+                        </label>
+                        <input id="loginUsername" name="username" type="text" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="请输入学号或工号">
+                    </div>
+
+                    <div>
+                        <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-lock mr-2 text-blue-500"></i>
+                            密码
+                        </label>
+                        <div class="relative">
+                            <input id="loginPassword" name="password" type="password" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
+                                placeholder="请输入密码">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                                onclick="togglePassword('loginPassword')">
+                                <i class="fas fa-eye text-gray-400 hover:text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="rememberMe" name="rememberMe" type="checkbox"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="rememberMe" class="ml-2 block text-sm text-gray-700">
+                                记住我
+                            </label>
+                        </div>
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                                忘记密码？
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            登录
+                        </button>
+                    </div>
+
+                    <!-- 第三方登录 -->
+                    <div class="mt-6">
+                        <div class="relative">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-300"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-2 bg-white text-gray-500">或者使用</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 grid grid-cols-2 gap-3">
+                            <button
+                                class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fab fa-qq text-blue-500 mr-2"></i>
+                                QQ登录
+                            </button>
+                            <button
+                                class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                <i class="fab fa-weixin text-green-500 mr-2"></i>
+                                微信登录
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 注册表单 -->
+                <div id="registerForm" class="space-y-6 hidden">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="registerUsername" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-user mr-2 text-blue-500"></i>
+                                学号/工号
+                            </label>
+                            <input id="registerUsername" name="username" type="text" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="学号或工号">
+                        </div>
+                        <div>
+                            <label for="realName" class="block text-sm font-medium text-gray-700 mb-2">
+                                <i class="fas fa-id-card mr-2 text-blue-500"></i>
+                                真实姓名
+                            </label>
+                            <input id="realName" name="realName" type="text" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                placeholder="真实姓名">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="userType" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-users mr-2 text-blue-500"></i>
+                            用户类型
+                        </label>
+                        <select id="userType" name="userType" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">请选择用户类型</option>
+                            <option value="student">学生</option>
+                            <option value="teacher">教师</option>
+                            <option value="staff">职工</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="college" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-building mr-2 text-blue-500"></i>
+                            学院/部门
+                        </label>
+                        <select id="college" name="college" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">请选择学院或部门</option>
+                            <option value="computer">计算机与信息工程学院</option>
+                            <option value="management">管理学院</option>
+                            <option value="foreign">外国语学院</option>
+                            <option value="art">艺术学院</option>
+                            <option value="law">法学院</option>
+                            <option value="education">教育科学学院</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-phone mr-2 text-blue-500"></i>
+                            手机号码
+                        </label>
+                        <input id="phone" name="phone" type="tel" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="请输入手机号码">
+                    </div>
+
+                    <div>
+                        <label for="registerPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-lock mr-2 text-blue-500"></i>
+                            密码
+                        </label>
+                        <div class="relative">
+                            <input id="registerPassword" name="password" type="password" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
+                                placeholder="请输入密码（至少6位）">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                                onclick="togglePassword('registerPassword')">
+                                <i class="fas fa-eye text-gray-400 hover:text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-2">
+                            <i class="fas fa-lock mr-2 text-blue-500"></i>
+                            确认密码
+                        </label>
+                        <div class="relative">
+                            <input id="confirmPassword" name="confirmPassword" type="password" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10"
+                                placeholder="请再次输入密码">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center"
+                                onclick="togglePassword('confirmPassword')">
+                                <i class="fas fa-eye text-gray-400 hover:text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center">
+                        <input id="agreeTerms" name="agreeTerms" type="checkbox" required
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="agreeTerms" class="ml-2 block text-sm text-gray-700">
+                            我已阅读并同意
+                            <a href="#" class="text-blue-600 hover:text-blue-500">用户协议</a>
+                            和
+                            <a href="#" class="text-blue-600 hover:text-blue-500">隐私政策</a>
+                        </label>
+                    </div>
+
+                    <div>
+                        <button type="submit"
+                            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <i class="fas fa-user-plus mr-2"></i>
+                            注册账号
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 返回首页链接 -->
+            <div class="text-center">
+                <a href="#" class="text-sm text-blue-600 hover:text-blue-500">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    返回首页
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 登录注册切换功能
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginTab = document.getElementById('loginTab');
+            const registerTab = document.getElementById('registerTab');
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            loginTab.addEventListener('click', function () {
+                // 切换到登录
+                loginTab.className = 'flex-1 py-2 px-4 text-center font-medium rounded-l-lg bg-blue-600 text-white';
+                registerTab.className = 'flex-1 py-2 px-4 text-center font-medium rounded-r-lg bg-gray-200 text-gray-700 hover:bg-gray-300';
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            });
+
+            registerTab.addEventListener('click', function () {
+                // 切换到注册
+                registerTab.className = 'flex-1 py-2 px-4 text-center font-medium rounded-r-lg bg-blue-600 text-white';
+                loginTab.className = 'flex-1 py-2 px-4 text-center font-medium rounded-l-lg bg-gray-200 text-gray-700 hover:bg-gray-300';
+                registerForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
+            });
+        });
+
+        // 密码显示/隐藏切换
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = input.nextElementSibling.querySelector('i');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash text-gray-400 hover:text-gray-600';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye text-gray-400 hover:text-gray-600';
+            }
+        }
+
+        // 表单验证
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致，请重新输入！');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('密码长度至少为6位！');
+                return;
+            }
+
+            alert('注册成功！请登录您的账号。');
+            // 切换到登录表单
+            document.getElementById('loginTab').click();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('登录成功！正在跳转到首页...');
+            // 这里可以添加实际的登录逻辑
+        });
+    </script>
+</body>
+
+</html>
