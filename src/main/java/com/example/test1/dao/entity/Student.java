@@ -1,36 +1,37 @@
+
 package com.example.test1.dao.entity;
 
-import jakarta.persistence.*;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-@Entity
-@Table(name = "student")
+@TableName("student")
 public class Student {
-    @Id
-    @Column(name = "studentinternalid", unique = true, nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @TableId(type = IdType.AUTO)
     private Long studentInternalId;
 
-    @Column(name = "sno", unique = true, nullable = false)
+    @TableField
     private Long sno;
 
-    @Column(name = "sname")
+    @TableField
     private String sname;
 
-    @Column(name = "sage")
+    @TableField
     private int sage;
 
-    @Column(name = "ssex")
+    @TableField
     private String ssex;
 
-    @Column(name = "grade")
+    @TableField
     private String grade;
 
-    @Column(name = "classs")
+    @TableField
     private int classs;
 
-    @Column(name = "enrollmenttime")
+    @TableField
     private String enrollmentTime;
 
     public Student() {}

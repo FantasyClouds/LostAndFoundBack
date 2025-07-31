@@ -17,23 +17,23 @@ public interface TestController {
     @PostMapping("/data/studentsDelete")
     public ResponseEntity<Response<String>> deleteStudent(@RequestBody List<Long> studentData);
 
-    //Amis修改单个学生
+    //Amis淇敼鍗曚釜瀛︾敓
     @PostMapping("/data/testForm/Alter/{StudentInternalId}")
     public ResponseEntity<Response<Boolean>> alterStudent(@PathVariable Long id,
                                                           @RequestBody Map<String, Object> studentData);
-    //Amis删除单个学生
+    //Amis鍒犻櫎鍗曚釜瀛︾敓
     @PostMapping("/data/testForm/studentDeleteAmis/{Sno}")
     public ResponseEntity<Response<Boolean>> deleteStudentAmis(@PathVariable Long id);
 
-    //Amis删除多个学生
+    //Amis鍒犻櫎澶氫釜瀛︾敓
     @PostMapping("/data/testForm/studentsDeleteAmis")
     public ResponseEntity<Response<Boolean>> deleteStudentsAmis(@RequestBody List<Long> requestBody);
 
-    //Amis添加单个学生
+    //Amis娣诲姞鍗曚釜瀛︾敓
     @PostMapping("/data/testForm/Add/{Sno}")
     public ResponseEntity<Response<Boolean>> addStudentAmis(@PathVariable Long id,
                                                             @RequestBody Map<String, Object> studentData);
-    //Amis查找学生，包括分页和获取全体学生
+    //Amis鏌ユ壘瀛︾敓锛屽寘鎷垎椤靛拰鑾峰彇鍏ㄤ綋瀛︾敓
     @GetMapping("/data/testForm/search")
     public ResponseEntity<Response<ResponseCrud<Student>>> searchStudent(
             @RequestParam(required = false) Long sno,

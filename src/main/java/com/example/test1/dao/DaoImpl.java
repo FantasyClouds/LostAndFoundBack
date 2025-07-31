@@ -1,154 +1,139 @@
 package com.example.test1.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.test1.dao.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import com.example.test1.dao.mapper.StudentMapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class DaoImpl implements Dao {
-    private final StudentRepository studentRepository;
+    private final StudentMapper studentMapper;
 
     @Autowired
-    public DaoImpl(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
+    public DaoImpl(StudentMapper studentMapper) {
+        this.studentMapper = studentMapper;
     }
 
     @Override
     public List<Student> getStudentList(){
-        return studentRepository.findAll();
+        return studentMapper.selectList(null);
     }
 
     //获取分页数据
     @Override
     public List<Student> getStudentList(int offset, int perPage){
-        return studentRepository.findAllWithPagination(offset, perPage);
+        Page<Student> page = new Page<>(offset / perPage + 1, perPage);
+        IPage<Student> result = studentMapper.selectPage(page, null);
+        return result.getRecords();
     }
 
     //获取学生总数
     @Override
     public int getStudentCount(){
-        return (int)studentRepository.countAll();
+        return (int)studentMapper.selectCount(null).longValue();
     }
 
     @Override
     public List<Student> searchByName(String name){
-        return studentRepository.searchStudentByName(name);
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+        wrapper.like("sname", name);
+        return studentMapper.selectList(wrapper);
     }
     @Override
     public void addStudent(Student student){
         System.out.println("DaoImpl addStudent");
         System.out.println("Student: " + student.toString());
-        studentRepository.save(student);
+        studentMapper.insert(student);
     }
     @Override
     public void deleteStudents(List<Student> studentList){
-        studentRepository.deleteAll(studentList);
+        if(studentList == null || studentList.isEmpty()) {
+            return;
+        }
+        List<Long> ids = new ArrayList<>();
+        for(Student student : studentList) {
+            ids.add(student.getStudentInternalId());
+        }
+        studentMapper.deleteBatchIds(ids);
     }
 
     //Amis框架单个修改学生信息
     public boolean updateStudent(Student student){
         try{
-            studentRepository.updateStudentById(student.getStudentInternalId(), student.getSno(), student.getSname(),
-                    student.getSage(), student.getSsex(), student.getGrade(), student.getClasss(), student.getEnrollmentTime());
+            return studentMapper.updateById(student) > 0;
         }catch (Exception e){
             e.printStackTrace();
             return false;
         }
-        return true;
     }
     //Amis框架单个删除学生信息
     public boolean deleteStudentAmis(Long sno){
         try{
-            studentRepository.deleteStudentById(sno);
+            return studentMapper.deleteById(sno) > 0;
         }catch (Exception e){
             e.printStackTrace();
             return false;
         }
-        return true;
     }
     //Amis框架添加单个学生信息
     public boolean addStudentAmis(Student student){
         try{
             System.out.println(student.toString());
-            studentRepository.save(student);
+            return studentMapper.insert(student) > 0;
         }catch (Exception e){
             e.printStackTrace();
             return false;
         }
-        return true;
     }
     public List<Student> searchStudent(Long sno, String sname, Integer sage, String ssex, String grade, Integer classs, Boolean isAnd){
-        List<Student> studentList = new ArrayList<>();
-        List<Student> studentList2 = new ArrayList<>();
+        QueryWrapper<Student> wrapper = new QueryWrapper<>();
         if(isAnd){
-            if(sno!= null){
-                studentList = studentRepository.findStudentBySno(sno);
+            if(sno != null){
+                wrapper.eq("sno", sno);
             }
             if(sname != null && !sname.isEmpty()){
-                studentList2 = studentRepository.findStudentBySname(sname);
-                if(studentList.isEmpty()){
-                    studentList = studentRepository.findStudentBySname(sname);
-                }
-                else studentList.retainAll(studentList2);
+                wrapper.like("sname", sname);
             }
             if(sage != null){
-                studentList2 = studentRepository.findStudentBySage(sage);
-                if(studentList.isEmpty()){
-                    studentList = studentRepository.findStudentBySage(sage);
-                }
-                else studentList.retainAll(studentList2);
+                wrapper.eq("sage", sage);
             }
             if(ssex != null && !ssex.isEmpty()){
-                studentList2 = studentRepository.findStudentBySsex(ssex);
-                if(studentList.isEmpty()){
-                    studentList = studentRepository.findStudentBySsex(ssex);
-                }
-                else studentList.retainAll(studentList2);
+                wrapper.eq("ssex", ssex);
             }
             if(grade != null && !grade.isEmpty()){
-                studentList2 = studentRepository.findStudentByGrade(grade);
-                if(studentList.isEmpty()){
-                    studentList = studentRepository.findStudentByGrade(grade);
-                }
-                else studentList.retainAll(studentList2);
+                wrapper.eq("grade", grade);
             }
             if(classs != null){
-                studentList2 = studentRepository.findStudentByClasss(classs);
-                if(studentList.isEmpty()){
-                    studentList = studentRepository.findStudentByClasss(classs);
-                }
-                else studentList.retainAll(studentList2);
+                wrapper.eq("classs", classs);
+            }
+        }else{
+            if(sno != null){
+                wrapper.or().eq("sno", sno);
+            }
+            if(sname != null && !sname.isEmpty()){
+                wrapper.or().like("sname", sname);
+            }
+            if(sage != null){
+                wrapper.or().eq("sage", sage);
+            }
+            if(ssex != null && !ssex.isEmpty()){
+                wrapper.or().eq("ssex", ssex);
+            }
+            if(grade != null && !grade.isEmpty()){
+                wrapper.or().eq("grade", grade);
+            }
+            if(classs != null){
+                wrapper.or().eq("classs", classs);
             }
         }
-        else{
-             if(sno != null){
-                 studentList = studentRepository.findStudentBySno(sno);
-             }
-             if(sname != null && !sname.isEmpty()){
-                 studentList2 = studentRepository.findStudentBySname(sname);
-                 studentList.addAll(studentList2);
-             }
-             if(sage != null){
-                 studentList2 = studentRepository.findStudentBySage(sage);
-                 studentList.addAll(studentList2);
-             }
-             if(ssex != null && !ssex.isEmpty()){
-                 studentList2 = studentRepository.findStudentBySsex(ssex);
-                 studentList.addAll(studentList2);
-             }
-             if(grade != null && !grade.isEmpty()){
-                 studentList2 = studentRepository.findStudentByGrade(grade);
-                 studentList.addAll(studentList2);
-             }
-             if(classs != null){
-                 studentList2 = studentRepository.findStudentByClasss(classs);
-                 studentList.addAll(studentList2);
-             }
-        }
-        System.out.println(studentList.toString());
-        return studentList;
+        List<Student> result = studentMapper.selectList(wrapper);
+        System.out.println(result.toString());
+        return result;
     }
 }

@@ -1,3 +1,4 @@
+
 package com.example.test1.service;
 
 
@@ -10,22 +11,22 @@ public interface StudentOperation {
 
     public void addStudent(Student student);
 
-    //获取分页数据
+    //鑾峰彇鍒嗛〉鏁版嵁
     public List<Student> getStudentList(int page, int perPage);
 
-    //获取学生总数
+    //鑾峰彇瀛︾敓鎬绘暟
     public int getStudentCount();
 
     public boolean deleteStudent(List<Student> data);
-    //Amis框架单个更新学生
+    //Amis妗嗘灦鍗曚釜鏇存柊瀛︾敓
     public int updateStudent(Student student);
 
-    //Amis框架单个删除学生
+    //Amis妗嗘灦鍗曚釜鍒犻櫎瀛︾敓
     public boolean deleteStudentAmis(Long id);
 
-    //Amis框架添加单个学生
+    //Amis妗嗘灦娣诲姞鍗曚釜瀛︾敓
     public boolean addStudentAmis(Student student);
 
-    //Amis框架搜索学生
+    //Amis妗嗘灦鎼滅储瀛︾敓
     public List<Student> searchStudent(Long sno, String name, Integer sage, String ssex, String grade, Integer classs, Boolean isAnd);
 }

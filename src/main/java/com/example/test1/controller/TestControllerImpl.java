@@ -203,21 +203,33 @@ public class TestControllerImpl implements TestController {
             @RequestParam(defaultValue = "1") Integer page,
             @RequestParam(defaultValue = "10") Integer perPage) {
         System.out.println("TestControllerImpl.searchStudent()");
-        System.out.println(String.format("Search params - sno: %s, sname: %s, sage: %s, ssex: %s, grade: %s, classs: %s, isAnd: %s",
-                sno, sname, sage, ssex, grade, classs, isAnd));
+        System.out.println(String.format("Search params - sno: %s, sname: %s, sage: %s, ssex: %s, grade: %s, classs: %s, isAnd: %s, page: %s, perPage: %s",
+                sno, sname, sage, ssex, grade, classs, isAnd, page, perPage));
+
+        // Validate pagination parameters
+        if (page < 1) page = 1;
+        if (perPage < 1) perPage = 10;
 
         Response<ResponseCrud<Student>> response = new Response<>();
         List<Student> studentList = studentOperation.searchStudent(sno, sname, sage, ssex, grade, classs, isAnd);
         int total = studentList.size();
 
-        ResponseCrud responseCrud = new ResponseCrud();
+        // Apply pagination
+        int fromIndex = (page - 1) * perPage;
+        if (fromIndex >= total) {
+            fromIndex = 0;
+            page = 1;
+        }
+        int toIndex = Math.min(fromIndex + perPage, total);
+        List<Student> pagedList = studentList.subList(fromIndex, toIndex);
 
+        ResponseCrud responseCrud = new ResponseCrud();
         response.msg = "搜索结果";
         response.status = 0;
         response.data = responseCrud;
-        responseCrud.setRows(studentList);
+        responseCrud.setRows(pagedList);
         responseCrud.setCount(total);
-        System.out.println("total:" + total);
+        System.out.println("total:" + total + ", showing " + pagedList.size() + " items (page " + page + ")");
 
         return new ResponseEntity<>(response, HttpStatus.OK);
 
