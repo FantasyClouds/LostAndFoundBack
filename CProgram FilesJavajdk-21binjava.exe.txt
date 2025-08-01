@@ -1541,7 +1541,7 @@ StudentMapper.java:
 package com.example.test1.dao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.example.test1.dao.entity.Student;
+import com.example.test1.dao.entity.Student_;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

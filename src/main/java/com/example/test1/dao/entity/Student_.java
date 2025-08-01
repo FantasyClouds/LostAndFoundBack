@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @TableName("student")
-public class Student {
+public class Student_ {
 
     @TableId(type = IdType.AUTO)
     private Long student_internal_id;
@@ -34,9 +34,9 @@ public class Student {
     @TableField
     private String enrollment_time;
 
-    public Student() {}
+    public Student_() {}
 
-    public Student(Long id, String sname, int age, String sex, String grade, int classs, String enrollmentTime) {
+    public Student_(Long id, String sname, int age, String sex, String grade, int classs, String enrollmentTime) {
         this.sno = id;
         this.sname = sname;
         this.sage = age;

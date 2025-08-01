@@ -1,5 +1,5 @@
 package com.example.test1.controller;
-import com.example.test1.dao.entity.Student;
+import com.example.test1.dao.entity.Student_;
 import com.example.test1.util.Response;
 import com.example.test1.util.ResponseCrud;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public interface TestController {
+public interface TestController_ {
     @GetMapping("/data/students")
-    public ResponseEntity<Response<List<Student>>> getStudentList();
+    public ResponseEntity<Response<List<Student_>>> getStudentList();
     @PostMapping("/data/studentsPost")
     public ResponseEntity<Response<String>> addStudent(@RequestBody Map<String, Object> studentData);
     @PostMapping("/data/studentsDelete")
@@ -35,7 +35,7 @@ public interface TestController {
                                                             @RequestBody Map<String, Object> studentData);
     //Amis查找学生，包括分页和获取全体学生
     @GetMapping("/data/testForm/search")
-    public ResponseEntity<Response<ResponseCrud<Student>>> searchStudent(
+    public ResponseEntity<Response<ResponseCrud<Student_>>> searchStudent(
             @RequestParam(required = false) Long sno,
             @RequestParam(required = false) String sname,
             @RequestParam(required = false) Integer sage,

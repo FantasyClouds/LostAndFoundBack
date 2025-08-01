@@ -4,8 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="添加自动生成数据表功能">
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="分离合并">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/AppUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/Auditor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/FoundFinished.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/FoundUnfinshed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/ItemAdmin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/LostFinished.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/LostUnfinished.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/util/ItemColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/util/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CProgram FilesJavajdk-21binjava.exe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CProgram FilesJavajdk-21binjava.exe.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestController_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/controller/TestControllerImpl_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/StudentDao_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/DaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/StudentDaoImpl_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/entity/Student_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/mapper/StudentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/dao/mapper/StudentMapper_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/service/StudentOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/service/StudentOperation_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test1/service/StudentOperationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test1/service/StudentOperationImpl_.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -147,6 +170,8 @@
       <workItem from="1750934084036" duration="12000" />
       <workItem from="1753938052925" duration="261000" />
       <workItem from="1753943295356" duration="2346000" />
+      <workItem from="1753945736290" duration="2432000" />
+      <workItem from="1754018070485" duration="5428000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -204,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753945567601</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="分离合并">
+      <option name="closed" value="true" />
+      <created>1753945897598</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1753945897599</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +259,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="新增文件上传" />
     <MESSAGE value="添加自动生成数据表功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加自动生成数据表功能" />
+    <MESSAGE value="分离合并" />
+    <option name="LAST_COMMIT_MESSAGE" value="分离合并" />
   </component>
 </project>

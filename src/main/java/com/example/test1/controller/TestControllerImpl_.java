@@ -1,32 +1,30 @@
 package com.example.test1.controller;
-import com.example.test1.dao.entity.Student;
+import com.example.test1.dao.entity.Student_;
 import com.example.test1.util.Response;
 import com.example.test1.util.ResponseCrud;
 import com.example.test1.util.TimestampUtils;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import com.example.test1.service.StudentOperation;
+import com.example.test1.service.StudentOperation_;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class TestControllerImpl implements TestController {
+public class TestControllerImpl_ implements TestController_ {
 
     @Autowired
-    private StudentOperation studentOperation;
+    private StudentOperation_ studentOperation;
 
     @GetMapping("/data/students")
-    public ResponseEntity<Response<List<Student>>> getStudentList() {
+    public ResponseEntity<Response<List<Student_>>> getStudentList() {
         System.out.println("TestControllerImpl.getStudentList()");
         System.out.println(studentOperation.getStudentList().toString());
-        Response<List<Student>> response = new Response();
+        Response<List<Student_>> response = new Response();
         response.status = 200;
         response.msg = "获取成功";
         response.data = studentOperation.getStudentList();
@@ -65,7 +63,7 @@ public class TestControllerImpl implements TestController {
         if(studentData.containsKey("time")) {
             date = (String) studentData.get("time");
         }
-        Student student = new Student(id, name, age, sex, grade, classs, date);
+        Student_ student = new Student_(id, name, age, sex, grade, classs, date);
         studentOperation.addStudent(student);
 
         response.status = 200;
@@ -88,7 +86,7 @@ public class TestControllerImpl implements TestController {
     //Amis框架单个修改
     @PostMapping("/data/testForm/Alter/{StudentInternalId}")
     public ResponseEntity<Response<Boolean>> alterStudent(@PathVariable Long StudentInternalId, @RequestBody Map<String, Object> studentData) {
-        Student student = new Student();
+        Student_ student = new Student_();
         boolean result = true;
         System.out.println("Alter StudentInternalId:" + StudentInternalId);
         student.setStudentInternalId(StudentInternalId);
@@ -162,7 +160,7 @@ public class TestControllerImpl implements TestController {
     //Amis框架添加单个学生信息
     @PostMapping("/data/testForm/Add/{Sno}")
     public ResponseEntity<Response<Boolean>> addStudentAmis(@PathVariable Long Sno, @RequestBody Map<String, Object> studentData){
-        Student student = new Student();
+        Student_ student = new Student_();
         System.out.println("StudentData:");
         for(String key : studentData.keySet()){
             System.out.println(key + ":" + studentData.get(key) + "Class:" + studentData.get(key).getClass());
@@ -193,7 +191,7 @@ public class TestControllerImpl implements TestController {
     }
     //Amis搜索
     @GetMapping("/data/testForm/search")
-    public ResponseEntity<Response<ResponseCrud<Student>>> searchStudent(
+    public ResponseEntity<Response<ResponseCrud<Student_>>> searchStudent(
             @RequestParam(required = false) Long sno,
             @RequestParam(required = false) String sname,
             @RequestParam(required = false) Integer sage,
@@ -211,8 +209,8 @@ public class TestControllerImpl implements TestController {
         if (page < 1) page = 1;
         if (perPage < 1) perPage = 10;
 
-        Response<ResponseCrud<Student>> response = new Response<>();
-        List<Student> studentList = studentOperation.searchStudent(sno, sname, sage, ssex, grade, classs, isAnd);
+        Response<ResponseCrud<Student_>> response = new Response<>();
+        List<Student_> studentList = studentOperation.searchStudent(sno, sname, sage, ssex, grade, classs, isAnd);
         int total = studentList.size();
 
         // Apply pagination
@@ -222,7 +220,7 @@ public class TestControllerImpl implements TestController {
             page = 1;
         }
         int toIndex = Math.min(fromIndex + perPage, total);
-        List<Student> pagedList = studentList.subList(fromIndex, toIndex);
+        List<Student_> pagedList = studentList.subList(fromIndex, toIndex);
 
         ResponseCrud responseCrud = new ResponseCrud();
         response.msg = "搜索结果";

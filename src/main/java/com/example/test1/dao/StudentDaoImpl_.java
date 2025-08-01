@@ -3,33 +3,33 @@ package com.example.test1.dao;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.test1.dao.entity.Student;
+import com.example.test1.dao.entity.Student_;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.example.test1.dao.mapper.StudentMapper;
+import com.example.test1.dao.mapper.StudentMapper_;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class DaoImpl implements Dao {
-    private final StudentMapper studentMapper;
+public class StudentDaoImpl_ implements StudentDao_ {
+    private final StudentMapper_ studentMapper;
 
     @Autowired
-    public DaoImpl(StudentMapper studentMapper) {
+    public StudentDaoImpl_(StudentMapper_ studentMapper) {
         this.studentMapper = studentMapper;
     }
 
     @Override
-    public List<Student> getStudentList(){
+    public List<Student_> getStudentList(){
         return studentMapper.selectList(null);
     }
 
     //获取分页数据
     @Override
-    public List<Student> getStudentList(int offset, int perPage){
-        Page<Student> page = new Page<>(offset / perPage + 1, perPage);
-        IPage<Student> result = studentMapper.selectPage(page, null);
+    public List<Student_> getStudentList(int offset, int perPage){
+        Page<Student_> page = new Page<>(offset / perPage + 1, perPage);
+        IPage<Student_> result = studentMapper.selectPage(page, null);
         return result.getRecords();
     }
 
@@ -40,31 +40,31 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public List<Student> searchByName(String name){
-        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+    public List<Student_> searchByName(String name){
+        QueryWrapper<Student_> wrapper = new QueryWrapper<>();
         wrapper.like("sname", name);
         return studentMapper.selectList(wrapper);
     }
     @Override
-    public void addStudent(Student student){
+    public void addStudent(Student_ student){
         System.out.println("DaoImpl addStudent");
         System.out.println("Student: " + student.toString());
         studentMapper.insert(student);
     }
     @Override
-    public void deleteStudents(List<Student> studentList){
+    public void deleteStudents(List<Student_> studentList){
         if(studentList == null || studentList.isEmpty()) {
             return;
         }
         List<Long> ids = new ArrayList<>();
-        for(Student student : studentList) {
+        for(Student_ student : studentList) {
             ids.add(student.getStudentInternalId());
         }
         studentMapper.deleteBatchIds(ids);
     }
 
     //Amis框架单个修改学生信息
-    public boolean updateStudent(Student student){
+    public boolean updateStudent(Student_ student){
         try{
             return studentMapper.updateById(student) > 0;
         }catch (Exception e){
@@ -82,7 +82,7 @@ public class DaoImpl implements Dao {
         }
     }
     //Amis框架添加单个学生信息
-    public boolean addStudentAmis(Student student){
+    public boolean addStudentAmis(Student_ student){
         try{
             System.out.println(student.toString());
             return studentMapper.insert(student) > 0;
@@ -91,8 +91,8 @@ public class DaoImpl implements Dao {
             return false;
         }
     }
-    public List<Student> searchStudent(Long sno, String sname, Integer sage, String ssex, String grade, Integer classs, Boolean isAnd){
-        QueryWrapper<Student> wrapper = new QueryWrapper<>();
+    public List<Student_> searchStudent(Long sno, String sname, Integer sage, String ssex, String grade, Integer classs, Boolean isAnd){
+        QueryWrapper<Student_> wrapper = new QueryWrapper<>();
         if(isAnd){
             if(sno != null){
                 wrapper.eq("sno", sno);
@@ -132,7 +132,7 @@ public class DaoImpl implements Dao {
                 wrapper.or().eq("classs", classs);
             }
         }
-        List<Student> result = studentMapper.selectList(wrapper);
+        List<Student_> result = studentMapper.selectList(wrapper);
         System.out.println(result.toString());
         return result;
     }
