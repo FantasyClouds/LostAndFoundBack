@@ -15,36 +15,47 @@ import java.time.LocalDateTime;
 @TableName("lost_unfinshed")
 public class LostUnfinished {
 
+    // 内部id，自动生成
     @TableId(type = IdType.AUTO)
     private Long lost_unfinished_internal_id;
 
+    // id，用于查找，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long lost_unfinished_id;
 
+    // 名字，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String lost_unfinished_name;
 
+    // 种类，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private ItemType lost_unfinished_category;
 
+    // 描述
     @TableField
     private String lost_unfinished_desc;
 
+    // 丢失地点
     @TableField
     private String lost_unfinished_location;
 
+    // 颜色，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private ItemColor lost_color;
 
+    // 图片地址
     @TableField
     private String lost_unfinished_img_url;
 
+    // 丢失时间
     @TableField
     private LocalDateTime lost_unfinished_lost_time;
 
+    // 发布时间
     @TableField
     private LocalDateTime lost_unfinished_public_time;
 
+    // 评论区
     @TableField(typeHandler = JacksonTypeHandler.class)
     private JsonNode lost_finished_comment;
 

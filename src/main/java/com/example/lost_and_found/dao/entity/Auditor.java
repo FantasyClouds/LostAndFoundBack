@@ -10,15 +10,19 @@ import com.baomidou.mybatisplus.annotation.*;
 @TableName("auditor")
 public class Auditor {
 
+    // 审核员内部id，自动生成
     @TableId(type = IdType.AUTO)
     private Long auditor_internal_id;
 
+    // 审核员id，用于查找，唯一
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long auditor_id;
 
+    // 审核员账号名字，用于登陆
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String auditor_name;
 
+    // 审核员密码
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String auditor_password;
 

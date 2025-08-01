@@ -11,15 +11,19 @@ import com.baomidou.mybatisplus.annotation.*;
 @TableName("app_user")
 public class AppUser {
 
+    // 内部id，自动生成
     @TableId(type = IdType.AUTO)
     private Long user_internal_id;
 
+    // 用户id，用于查找，可写代码维护
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long user_id;
 
+    // 用户名
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String user_name;
 
+    // 用户密码
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String user_password;
 

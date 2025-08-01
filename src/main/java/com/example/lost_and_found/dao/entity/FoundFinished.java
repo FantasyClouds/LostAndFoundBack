@@ -15,39 +15,51 @@ import java.time.LocalDateTime;
 @TableName("found_finished")
 public class FoundFinished {
 
+    // 内部id，自动生成
     @TableId(type = IdType.AUTO)
     private Long found_finished_internal_id;
 
+    // id，唯一标识，由用户生成，供查询（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long found_finished_id;
 
+    // 名字（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String found_finished_name;
 
+    // 类型（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private ItemType found_finished_category;
 
+    // 描述
     @TableField
     private String found_finished_desc;
 
+    // 捡到地点
     @TableField
     private String found_finished_location;
 
+    // 颜色（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private ItemColor found_color;
 
+    // 图片url
     @TableField
     private String found_finished_img_url;
 
+    // 捡到时间
     @TableField
     private LocalDateTime found_finished_found_time;
 
+    // 发布时间
     @TableField
     private LocalDateTime found_finished_public_time;
 
+    // 完成时间
     @TableField
     private LocalDateTime found_finished_finish_time;
 
+    // 评论区
     @TableField(typeHandler = JacksonTypeHandler.class)
     private JsonNode lost_unfinished_comment;
 

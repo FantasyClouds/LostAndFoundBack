@@ -9,15 +9,19 @@ import com.baomidou.mybatisplus.annotation.*;
 @TableName("item_admin")
 public class ItemAdmin {
 
+    // 内部id，自动生成
     @TableId(type = IdType.AUTO)
     private Long lost_admin_internal_id;
 
+    // id，用于查找（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long lost_admin_id;
 
+    // 名字，用于登陆（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String lost_admin_name;
 
+    // 密码（非空）
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String lost_admin_password;
 

@@ -13,33 +13,43 @@ import java.time.LocalDateTime;
 @TableName("found_unfinshed")
 public class FoundUnfinished {
 
+    // 内部id，自动生成
     @TableId(type = IdType.AUTO)
     private Long found_unfinished_internal_id;
 
+    // id，用于查找，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long found_unfinished_id;
 
+    // 名字，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String found_unfinished_name;
 
+    // 种类，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private ItemType found_unfinished_category;
 
+    // 描述
     @TableField
     private String found_unfinished_desc;
 
+    // 捡到地点
     @TableField
     private String found_unfinished_location;
 
+    // 颜色，非空
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private ItemColor found_color;
 
+    // 图片url
     @TableField
     private String found_unfinished_img_url;
 
+    // 捡到时间
     @TableField
     private LocalDateTime found_unfinished_found_time;
 
+    // 发布时间
     @TableField
     private LocalDateTime found_unfinished_public_time;
 
