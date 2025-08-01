@@ -11,7 +11,7 @@ import com.example.test1.util.ItemType;
 import java.time.LocalDateTime;
 
 @TableName("found_unfinshed")
-public class FoundUnfinshed {
+public class FoundUnfinished {
 
     @TableId(type = IdType.AUTO)
     private Long found_unfinished_internal_id;
@@ -43,10 +43,13 @@ public class FoundUnfinshed {
     @TableField
     private LocalDateTime found_unfinished_public_time;
 
-    public FoundUnfinshed() {
+    public FoundUnfinished() {
     }
 
-    public FoundUnfinshed(Long found_unfinished_internal_id, String found_unfinished_name, Long found_unfinished_id, ItemType found_unfinished_category, String found_unfinished_desc, String found_unfinished_location, ItemColor found_color, String found_unfinished_img_url, LocalDateTime found_unfinished_found_time, LocalDateTime found_unfinished_public_time) {
+    public FoundUnfinished(Long found_unfinished_internal_id, String found_unfinished_name, Long found_unfinished_id,
+                           ItemType found_unfinished_category, String found_unfinished_desc, String found_unfinished_location,
+                           ItemColor found_color, String found_unfinished_img_url, LocalDateTime found_unfinished_found_time,
+                           LocalDateTime found_unfinished_public_time) {
         this.found_unfinished_internal_id = found_unfinished_internal_id;
         this.found_unfinished_name = found_unfinished_name;
         this.found_unfinished_id = found_unfinished_id;

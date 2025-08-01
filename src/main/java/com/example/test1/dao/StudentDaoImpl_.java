@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class StudentDaoImpl_ implements StudentDao_ {
+public class StudentDaoImpl_ {
     private final StudentMapper_ studentMapper;
 
     @Autowired
@@ -20,13 +20,11 @@ public class StudentDaoImpl_ implements StudentDao_ {
         this.studentMapper = studentMapper;
     }
 
-    @Override
     public List<Student_> getStudentList(){
         return studentMapper.selectList(null);
     }
 
     //获取分页数据
-    @Override
     public List<Student_> getStudentList(int offset, int perPage){
         Page<Student_> page = new Page<>(offset / perPage + 1, perPage);
         IPage<Student_> result = studentMapper.selectPage(page, null);
@@ -34,24 +32,20 @@ public class StudentDaoImpl_ implements StudentDao_ {
     }
 
     //获取学生总数
-    @Override
     public int getStudentCount(){
         return (int)studentMapper.selectCount(null).longValue();
     }
 
-    @Override
     public List<Student_> searchByName(String name){
         QueryWrapper<Student_> wrapper = new QueryWrapper<>();
         wrapper.like("sname", name);
         return studentMapper.selectList(wrapper);
     }
-    @Override
     public void addStudent(Student_ student){
         System.out.println("DaoImpl addStudent");
         System.out.println("Student: " + student.toString());
         studentMapper.insert(student);
     }
-    @Override
     public void deleteStudents(List<Student_> studentList){
         if(studentList == null || studentList.isEmpty()) {
             return;

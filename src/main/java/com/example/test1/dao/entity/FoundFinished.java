@@ -54,7 +54,11 @@ public class FoundFinished {
     public FoundFinished() {
     }
 
-    public FoundFinished(Long found_finished_internal_id, Long found_finished_id, String found_finished_name, ItemType found_finished_category, String found_finished_desc, String found_finished_location, ItemColor found_color, String found_finished_img_url, LocalDateTime found_finished_found_time, LocalDateTime found_finished_public_time, LocalDateTime found_finished_finish_time, JsonNode lost_unfinished_comment) {
+    public FoundFinished(Long found_finished_internal_id, Long found_finished_id, String found_finished_name,
+                         ItemType found_finished_category, String found_finished_desc, String found_finished_location,
+                         ItemColor found_color, String found_finished_img_url, LocalDateTime found_finished_found_time,
+                         LocalDateTime found_finished_public_time, LocalDateTime found_finished_finish_time,
+                         JsonNode lost_unfinished_comment) {
         this.found_finished_internal_id = found_finished_internal_id;
         this.found_finished_id = found_finished_id;
         this.found_finished_name = found_finished_name;

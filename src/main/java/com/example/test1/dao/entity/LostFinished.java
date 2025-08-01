@@ -54,7 +54,11 @@ public class LostFinished {
     public LostFinished() {
     }
 
-    public LostFinished(Long lost_finished_internal_id, Long lost_finished_id, String lost_finished_name, ItemType lost_finished_category, String lost_finished_desc, String lost_finished_location, ItemColor lost_color, String lost_finished_img_url, LocalDateTime lost_finished_found_time, LocalDateTime lost_finished_public_time, LocalDateTime lost_finished_finish_time, JsonNode lost_finished_comment) {
+    public LostFinished(Long lost_finished_internal_id, Long lost_finished_id, String lost_finished_name,
+                        ItemType lost_finished_category, String lost_finished_desc, String lost_finished_location,
+                        ItemColor lost_color, String lost_finished_img_url, LocalDateTime lost_finished_found_time,
+                        LocalDateTime lost_finished_public_time, LocalDateTime lost_finished_finish_time,
+                        JsonNode lost_finished_comment) {
         this.lost_finished_internal_id = lost_finished_internal_id;
         this.lost_finished_id = lost_finished_id;
         this.lost_finished_name = lost_finished_name;
