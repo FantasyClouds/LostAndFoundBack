@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架">
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*修复bug，完善库表唯一性约束">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/RegisterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/RegisterDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/SearchDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/SearchDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/HomeItemDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/HomeItemDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/LoginService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +158,7 @@
       <workItem from="1753945736290" duration="2432000" />
       <workItem from="1754018070485" duration="12877000" />
       <workItem from="1754033251199" duration="9152000" />
-      <workItem from="1754103977512" duration="7503000" />
+      <workItem from="1754103977512" duration="8270000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -264,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754122127421</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="*修复bug，完善库表唯一性约束">
+      <option name="closed" value="true" />
+      <created>1754122970268</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1754122970268</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,6 +300,7 @@
     <MESSAGE value="*编写java文档&#10;*将Response响应类的Code改为HttpsStatus" />
     <MESSAGE value="*添加实体类属性注释&#10;*添加代码包文档注释" />
     <MESSAGE value="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架" />
-    <option name="LAST_COMMIT_MESSAGE" value="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架" />
+    <MESSAGE value="*修复bug，完善库表唯一性约束" />
+    <option name="LAST_COMMIT_MESSAGE" value="*修复bug，完善库表唯一性约束" />
   </component>
 </project>

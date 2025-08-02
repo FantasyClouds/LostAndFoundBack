@@ -13,9 +13,6 @@ public class LoginService {
      * 登录业务逻辑，需要对account参数进行分支处理。
      * account参数为id或者账号名。
      * 登录失败时请抛出异常，返回原因字符串
-     * @param account
-     * @param password
-     * @return true or false
      */
     public Boolean login(String account, String password) {
         log.info("login()");
@@ -29,8 +26,6 @@ public class LoginService {
 
     /**
      * 判断name参数是否为id
-     * @param account
-     * @return
      */
     public Boolean ifAccountIsId(String account) {
         log.info("ifNameIsId()");

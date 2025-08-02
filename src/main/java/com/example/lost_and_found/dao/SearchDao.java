@@ -17,7 +17,6 @@ import java.util.List;
 public class SearchDao {
     /**
      * 用于搜索失物招领信息，和Controller层的searchFoundUnfinished()方法对应
-     * @return List<FoundUnfinished>
      */
     public List<FoundUnfinished> search(
             String name,
