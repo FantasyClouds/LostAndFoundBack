@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*补全文档">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/RegisterRequest.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*修改登录和注册请求体">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +96,8 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Maven.lost_and_found [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lost_and_found [install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.test1 [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.test1 [compile].executor&quot;: &quot;Run&quot;,
     &quot;Maven.test1 [install].executor&quot;: &quot;Run&quot;,
@@ -159,7 +164,11 @@
       <workItem from="1753945736290" duration="2432000" />
       <workItem from="1754018070485" duration="12877000" />
       <workItem from="1754033251199" duration="9152000" />
-      <workItem from="1754103977512" duration="9705000" />
+      <workItem from="1754103977512" duration="10288000" />
+      <workItem from="1754125580503" duration="331000" />
+      <workItem from="1754125920060" duration="984000" />
+      <workItem from="1754126912887" duration="556000" />
+      <workItem from="1754127477755" duration="1349000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -289,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754123706069</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="*修改登录和注册请求体">
+      <option name="closed" value="true" />
+      <created>1754125015571</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1754125015571</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +337,7 @@
     <MESSAGE value="*修复bug，完善库表唯一性约束" />
     <MESSAGE value="*修复文档爆红（虽然现在还是爆黄）" />
     <MESSAGE value="*补全文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="*补全文档" />
+    <MESSAGE value="*修改登录和注册请求体" />
+    <option name="LAST_COMMIT_MESSAGE" value="*修改登录和注册请求体" />
   </component>
 </project>
