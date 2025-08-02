@@ -1,11 +1,13 @@
 package com.example.lost_and_found.controller;
 
+import com.example.lost_and_found.dao.dto.LoginRequest;
 import com.example.lost_and_found.util.College;
 import com.example.lost_and_found.util.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,13 +23,13 @@ public class LoginController {
      */
     @PostMapping("/login")
     public ResponseEntity<Response<Boolean>> register(
-            @RequestParam(required = true) String account,
-            @RequestParam(required = true) String password
-    ) {
+            @RequestBody LoginRequest loginRequest
+            ) {
         log.info("login");
         Response<Boolean> response = new Response<>();
         // TODO: 登录逻辑
         // TODO: 调用service层的登录方法，返回登录成功与否。
+        // TODO: 注意对LoginRequest判空
 
 
         response.status = HttpStatus.OK;

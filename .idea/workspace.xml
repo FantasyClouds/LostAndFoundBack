@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*修复文档爆红（虽然现在还是爆黄）">
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*补全文档">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/RegisterRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserNotExistException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +21,9 @@
       <list>
         <option value="package-info" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Exception" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -158,7 +159,7 @@
       <workItem from="1753945736290" duration="2432000" />
       <workItem from="1754018070485" duration="12877000" />
       <workItem from="1754033251199" duration="9152000" />
-      <workItem from="1754103977512" duration="8419000" />
+      <workItem from="1754103977512" duration="9705000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -280,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754123550088</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="*补全文档">
+      <option name="closed" value="true" />
+      <created>1754123706069</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1754123706069</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +319,7 @@
     <MESSAGE value="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架" />
     <MESSAGE value="*修复bug，完善库表唯一性约束" />
     <MESSAGE value="*修复文档爆红（虽然现在还是爆黄）" />
-    <option name="LAST_COMMIT_MESSAGE" value="*修复文档爆红（虽然现在还是爆黄）" />
+    <MESSAGE value="*补全文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="*补全文档" />
   </component>
 </project>

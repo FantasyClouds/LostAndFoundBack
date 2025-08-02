@@ -1,12 +1,13 @@
 package com.example.lost_and_found.controller;
 
+import com.example.lost_and_found.dao.dto.RegisterRequest;
 import com.example.lost_and_found.util.College;
 import com.example.lost_and_found.util.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,14 +23,8 @@ public class SignUpController {
      */
     @PostMapping("/register")
     public ResponseEntity<Response<Boolean>> register(
-            @RequestParam(required = true) Long id,
-            @RequestParam(required = true) String name,
-            @RequestParam(required = true) String password,
-            @RequestParam(required = true) String real_name,
-            @RequestParam(required = true) String type,
-            @RequestParam(required = true) String phone,
-            @RequestParam(required = true) College college
-    ) {
+            @RequestBody RegisterRequest registerRequest
+            ) {
         log.info("register");
         Response<Boolean> response = new Response<>();
         // TODO: 校验注册信息，如密码长度、用户名是否已存在等。
