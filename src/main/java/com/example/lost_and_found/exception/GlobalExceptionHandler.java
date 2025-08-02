@@ -14,12 +14,52 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @Hidden
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    // 处理 UserAlreadyExistsException
-    @ExceptionHandler(UserAlreadyExistsException.class)
+    /**
+     * 处理注册时，用户名已存在异常 UserNameAlreadyExistsException
+      */
+    @ExceptionHandler(UserNameAlreadyExistsException.class)
     @ResponseStatus(HttpStatus.CONFLICT) // 自动设置 HTTP 409
-    public ErrorResponse handleUserExists(UserAlreadyExistsException ex) {
+    public ErrorResponse handleUserNameExists(UserNameAlreadyExistsException ex) {
         return new ErrorResponse(ex.getMessage());
     }
+
+    /**
+     * 处理注册时，用户ID已存在异常 UserIdNameAlreadyExistsException
+     */
+    @ExceptionHandler(UserIdAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT) // 自动设置 HTTP 409
+    public ErrorResponse handleUserIdExists(UserIdAlreadyExistsException ex) {
+        return new ErrorResponse(ex.getMessage());
+    }
+    /**
+     * 处理注册时，用户ID已存在异常 UserIdNameAlreadyExistsException
+     */
+    @ExceptionHandler(UserPasswordIllegalException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY) // 自动设置 HTTP 422
+    public ErrorResponse handleUserPasswordIllegal(UserPasswordIllegalException ex) {
+        return new ErrorResponse(ex.getMessage());
+    }
+    /**
+     * 处理注册时，用户手机已存在异常 UserIdNameAlreadyExistsException
+     */
+    @ExceptionHandler(UserPhoneAlreadyExistException.class)
+    @ResponseStatus(HttpStatus.CONFLICT) // 自动设置 HTTP 409
+    public ErrorResponse handleUserPasswordIllegal(UserPhoneAlreadyExistException ex) {
+        return new ErrorResponse(ex.getMessage());
+    }
+    /**
+     * 登录时，账号不存在
+     */
+    @ExceptionHandler(UserNotExistException.class)
+    @ResponseStatus(HttpStatus.CONFLICT) // 自动设置 HTTP 409
+    public ErrorResponse handleUserPasswordIllegal(UserNotExistException ex) {
+        return new ErrorResponse(ex.getMessage());
+    }
+
+
+    /**
+     * 自定义错误响应类
+     */
     @Data
     @AllArgsConstructor
     public static class ErrorResponse {

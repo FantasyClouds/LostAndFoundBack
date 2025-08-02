@@ -2,6 +2,7 @@
 package com.example.lost_and_found.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.example.lost_and_found.util.College;
 
 
 /**
@@ -15,7 +16,7 @@ public class AppUser {
     @TableId(type = IdType.AUTO)
     private Long user_internal_id;
 
-    // 用户id，用于查找，可写代码维护
+    // 用户学号/工号，注册时填写，用于查找
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private Long user_id;
 
@@ -27,13 +28,29 @@ public class AppUser {
     @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
     private String user_password;
 
+    //用户真实姓名
+    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
+    private String user_real_name;
+
+    //用户手机号
+    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
+    private String user_phone;
+
+    //用户学院
+    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
+    private College user_college;
+
     public AppUser() {
     }
 
-    public AppUser(Long user_id, String user_name, String user_password) {
+    public AppUser(Long user_id, String user_name, String user_password,
+                   String user_real_name, String user_phone, College user_college) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.user_password = user_password;
+        this.user_real_name = user_real_name;
+        this.user_phone = user_phone;
+        this.user_college = user_college;
     }
 
     /**
@@ -91,6 +108,42 @@ public class AppUser {
     public void setUser_password(String user_password) {
         this.user_password = user_password;
     }
+    /**
+     * 用户真实姓名
+     */
+    public String getUser_real_name() {
+        return user_real_name;
+    }
+    /**
+     * 用户真实姓名
+     */
+    public void setUser_real_name(String user_real_name) {
+        this.user_real_name = user_real_name;
+    }
+    /**
+     * 用户手机
+     */
+    public String getUser_phone() {
+        return user_phone;
+    }
+    /**
+     * 用户手机
+     */
+    public void setUser_phone(String user_phone) {
+        this.user_phone = user_phone;
+    }
+    /**
+     * 用户学院
+     */
+    public College getUser_college() {
+        return user_college;
+    }
+    /**
+     * 用户学院
+     */
+    public void setUser_college(College user_college) {
+        this.user_college = user_college;
+    }
 
     @Override
     public String toString() {
@@ -99,6 +152,9 @@ public class AppUser {
                 ", user_id=" + user_id +
                 ", user_name='" + user_name + '\'' +
                 ", user_password='" + user_password + '\'' +
+                ", user_real_name='" + user_real_name + '\'' +
+                ", user_phone='" + user_phone + '\'' +
+                ", user_college='" + user_college + '\'' +
                 '}';
     }
 }

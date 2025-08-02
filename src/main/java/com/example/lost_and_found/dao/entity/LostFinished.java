@@ -63,6 +63,10 @@ public class LostFinished {
     @TableField(typeHandler = JacksonTypeHandler.class)
     private JsonNode lost_finished_comment;
 
+    // 审核员id
+    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
+    private Long lost_finished__auditor_id;
+
     public LostFinished() {
     }
 
@@ -70,7 +74,7 @@ public class LostFinished {
                         ItemType lost_finished_category, String lost_finished_desc, String lost_finished_location,
                         ItemColor lost_color, String lost_finished_img_url, LocalDateTime lost_finished_lost_time,
                         LocalDateTime lost_finished_public_time, LocalDateTime lost_finished_finish_time,
-                        JsonNode lost_finished_comment) {
+                        JsonNode lost_finished_comment, Long lost_finished__auditor_id) {
         this.lost_finished_internal_id = lost_finished_internal_id;
         this.lost_finished_id = lost_finished_id;
         this.lost_finished_name = lost_finished_name;
@@ -83,6 +87,7 @@ public class LostFinished {
         this.lost_finished_public_time = lost_finished_public_time;
         this.lost_finished_finish_time = lost_finished_finish_time;
         this.lost_finished_comment = lost_finished_comment;
+        this.lost_finished__auditor_id = lost_finished__auditor_id;
     }
     /**
      * 内部id，自动生成
@@ -227,6 +232,18 @@ public class LostFinished {
      */
     public void setLost_finished_comment(JsonNode lost_finished_comment) {
         this.lost_finished_comment = lost_finished_comment;
+    }
+    /**
+     * 审核员id（非空，外键）
+     */
+    public Long getLost_finished__auditor_id() {
+        return lost_finished__auditor_id;
+    }
+    /**
+     * 审核员id（非空，外键）
+     */
+    public void setLost_finished__auditor_id(Long lost_finished__auditor_id) {
+        this.lost_finished__auditor_id = lost_finished__auditor_id;
     }
 
     @Override

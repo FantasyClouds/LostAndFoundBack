@@ -4,25 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*编写java文档&#10;*将Response响应类的Code改为HttpsStatus">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/package-info.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*添加实体类属性注释&#10;*添加代码包文档注释">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/SignUpController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/RegisterDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/SearchDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnchecked.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserIdAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserNotExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserPasswordIllegalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserPhoneAlreadyExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/SignUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/College.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/Auditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/Auditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundFinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundUnfinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundUnfinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/ItemAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/ItemAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostFinished.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnfinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnfinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/FoundUnfinishedMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/FoundUnfinishedMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserNameAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/HomeItemDataOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/HomeItemDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/文档.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +37,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="package-info" />
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Exception" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -128,19 +134,6 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="lost_and_found" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="lost_and_found" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Test1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="lost_and_found" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.lost_and_found.Test1Application" />
@@ -183,7 +176,8 @@
       <workItem from="1753943295356" duration="2346000" />
       <workItem from="1753945736290" duration="2432000" />
       <workItem from="1754018070485" duration="12877000" />
-      <workItem from="1754033251199" duration="8563000" />
+      <workItem from="1754033251199" duration="9152000" />
+      <workItem from="1754103977512" duration="6837000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -273,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754041016757</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="*添加实体类属性注释&#10;*添加代码包文档注释">
+      <option name="closed" value="true" />
+      <created>1754041839021</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1754041839022</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +301,7 @@
     <MESSAGE value="*区分老代码，旧类后添加下划线&#10;*建库建表，统一字段名" />
     <MESSAGE value="*整理代码风格规范&#10;*去除冗余的接口&#10;*添加Swagger接口文档，与前端交互&#10;*添加异常处理机制&#10;*添加查询代码起点" />
     <MESSAGE value="*编写java文档&#10;*将Response响应类的Code改为HttpsStatus" />
-    <option name="LAST_COMMIT_MESSAGE" value="*编写java文档&#10;*将Response响应类的Code改为HttpsStatus" />
+    <MESSAGE value="*添加实体类属性注释&#10;*添加代码包文档注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="*添加实体类属性注释&#10;*添加代码包文档注释" />
   </component>
 </project>

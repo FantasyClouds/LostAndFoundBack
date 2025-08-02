@@ -14,7 +14,10 @@ CREATE TABLE IF NOT EXISTS app_user(
     user_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_id BIGINT NOT NULL,
     user_name VARCHAR(50) NOT NULL,
-    user_password VARCHAR(50) NOT NULL
+    user_password VARCHAR(50) NOT NULL,
+    user_real_name VARCHAR(50) NOT NULL,
+    user_phone VARCHAR(20) NOT NULL,
+    user_college VARCHAR(50) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS item_admin(
     lost_admin_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -64,7 +67,8 @@ CREATE TABLE IF NOT EXISTS lost_unfinished(
     lost_unfinished_img_url VARCHAR(200),
     lost_unfinished_lost_time DATETIME,
     lost_unfinished_public_time DATETIME,
-    lost_unfinished_comment JSON
+    lost_unfinished_comment JSON,
+    lost_unfinished_auditor_id BIGINT NOT NULL REFERENCES auditor(auditor_id)
 );
 CREATE TABLE IF NOT EXISTS lost_finished(
     lost_finished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -78,5 +82,21 @@ CREATE TABLE IF NOT EXISTS lost_finished(
     lost_finished_lost_time DATETIME,
     lost_finished_public_time DATETIME,
     lost_finished_finish_time DATETIME,
-    lost_finished_comment JSON
+    lost_finished_comment JSON,
+    lost_unfinished_auditor_id BIGINT NOT NULL REFERENCES auditor(auditor_id)
 );
+CREATE TABLE IF NOT EXISTS lost_unchecked(
+    lost_finished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    lost_finished_id BIGINT NOT NULL,
+    lost_finished_name VARCHAR(50) NOT NULL,
+    lost_finished_category INT NOT NULL,
+    lost_finished_desc VARCHAR(1000),
+    lost_finished_location VARCHAR(50),
+    lost_color INT NOT NULL,
+    lost_finished_img_url VARCHAR(200),
+    lost_finished_lost_time DATETIME,
+    lost_finished_public_time DATETIME,
+    lost_finished_finish_time DATETIME,
+    lost_finished_comment JSON,
+    lost_unfinished_auditor_id BIGINT NOT NULL REFERENCES auditor(auditor_id)
+    );

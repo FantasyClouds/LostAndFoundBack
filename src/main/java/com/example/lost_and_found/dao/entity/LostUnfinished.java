@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 /**
  * 寻物启事（未完成的）
  */
-@TableName("lost_unfinshed")
+@TableName("lost_unfinished")
 public class LostUnfinished {
 
     // 内部id，自动生成
@@ -58,6 +58,11 @@ public class LostUnfinished {
     // 评论区
     @TableField(typeHandler = JacksonTypeHandler.class)
     private JsonNode lost_finished_comment;
+
+    // 审核员id（非空，外键）
+    @TableField(insertStrategy = FieldStrategy.NOT_NULL)
+    private Long lost_unfinished_auditor_id;
+
 
     public LostUnfinished() {
     }
@@ -208,6 +213,18 @@ public class LostUnfinished {
      */
     public void setLost_finished_comment(JsonNode lost_finished_comment) {
         this.lost_finished_comment = lost_finished_comment;
+    }
+    /**
+     * 审核员id（非空，外键）
+     */
+    public Long getLost_unfinished_auditor_id() {
+        return lost_unfinished_auditor_id;
+    }
+    /**
+     * 审核员id（非空，外键）
+     */
+    public void setLost_finished_author_id(Long lost_unfinished_auditor_id) {
+        this.lost_unfinished_auditor_id = lost_unfinished_auditor_id;
     }
 
     @Override
