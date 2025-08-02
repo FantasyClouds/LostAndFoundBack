@@ -48,7 +48,7 @@ public class GlobalExceptionHandler {
         return new ErrorResponse(ex.getMessage());
     }
     /**
-     * 登录时，账号不存在
+     * 登录时，账号不存在异常 UserNotExistException
      */
     @ExceptionHandler(UserNotExistException.class)
     @ResponseStatus(HttpStatus.CONFLICT) // 自动设置 HTTP 409
