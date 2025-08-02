@@ -4,30 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*添加实体类属性注释&#10;*添加代码包文档注释">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/SignUpController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/RegisterDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/SearchDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnchecked.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserIdAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserNotExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserPasswordIllegalException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserPhoneAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/SignUpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/College.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/AppUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/AppUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostFinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnfinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnfinished.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/FoundUnfinishedMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/FoundUnfinishedMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/UserNameAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/HomeItemDataOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/HomeItemDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/RegisterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/RegisterDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/SearchDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/SearchDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/文档.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +158,7 @@
       <workItem from="1753945736290" duration="2432000" />
       <workItem from="1754018070485" duration="12877000" />
       <workItem from="1754033251199" duration="9152000" />
-      <workItem from="1754103977512" duration="6837000" />
+      <workItem from="1754103977512" duration="7503000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -275,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754041839022</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架">
+      <option name="closed" value="true" />
+      <created>1754122127421</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1754122127421</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,6 +291,7 @@
     <MESSAGE value="*整理代码风格规范&#10;*去除冗余的接口&#10;*添加Swagger接口文档，与前端交互&#10;*添加异常处理机制&#10;*添加查询代码起点" />
     <MESSAGE value="*编写java文档&#10;*将Response响应类的Code改为HttpsStatus" />
     <MESSAGE value="*添加实体类属性注释&#10;*添加代码包文档注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="*添加实体类属性注释&#10;*添加代码包文档注释" />
+    <MESSAGE value="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="*完善库表&#10;*增加异常&#10;*添加登录逻辑框架&#10;*添加注册逻辑框架" />
   </component>
 </project>

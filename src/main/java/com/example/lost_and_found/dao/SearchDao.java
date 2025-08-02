@@ -4,6 +4,7 @@ import com.example.lost_and_found.dao.entity.FoundUnfinished;
 import com.example.lost_and_found.util.ItemColor;
 import com.example.lost_and_found.util.ItemType;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * 搜索Dao
  */
+@Repository
 @Slf4j
 public class SearchDao {
     /**

@@ -2,11 +2,13 @@ package com.example.lost_and_found.dao;
 
 import com.example.lost_and_found.util.College;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Repository;
 
 /**
  * 数据库操作类
  * 用于注册用户到数据库
  */
+@Repository
 @Slf4j
 public class RegisterDao {
     /**

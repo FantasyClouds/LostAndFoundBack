@@ -2,7 +2,7 @@
 CREATE Database IF NOT EXISTS lost_and_found;
 CREATE TABLE IF NOT EXISTS student (
     student_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    Sno BIGINT NOT NULL,
+    Sno BIGINT NOT NULL UNIQUE,
     Sname VARCHAR(50),
     Sage INT,
     Ssex VARCHAR(10),
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS student (
 );
 CREATE TABLE IF NOT EXISTS app_user(
     user_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    user_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL UNIQUE,
     user_name VARCHAR(50) NOT NULL,
     user_password VARCHAR(50) NOT NULL,
     user_real_name VARCHAR(50) NOT NULL,
@@ -21,19 +21,19 @@ CREATE TABLE IF NOT EXISTS app_user(
 );
 CREATE TABLE IF NOT EXISTS item_admin(
     lost_admin_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    lost_admin_id BIGINT NOT NULL,
+    lost_admin_id BIGINT NOT NULL UNIQUE,
     lost_admin_name VARCHAR(50) NOT NULL,
     lost_admin_password VARCHAR(50) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS auditor(
     auditor_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    auditor_id BIGINT NOT NULL,
+    auditor_id BIGINT NOT NULL UNIQUE,
     auditor_name VARCHAR(50) NOT NULL,
     auditor_password VARCHAR(50) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS found_unfinished(
     found_unfinished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    found_unfinished_id BIGINT NOT NULL,
+    found_unfinished_id BIGINT NOT NULL UNIQUE,
     found_unfinished_name VARCHAR(50) NOT NULL,
     found_unfinished_category INT NOT NULL,
     found_unfinished_desc VARCHAR(1000),
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS found_unfinished(
 );
 CREATE TABLE IF NOT EXISTS found_finished(
     found_finished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    found_finished_id BIGINT NOT NULL,
+    found_finished_id BIGINT NOT NULL UNIQUE,
     found_finished_name VARCHAR(50) NOT NULL,
     found_finished_category INT NOT NULL,
     found_finished_desc VARCHAR(1000),
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS found_finished(
 );
 CREATE TABLE IF NOT EXISTS lost_unfinished(
     lost_unfinished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    lost_unfinished_id BIGINT NOT NULL,
+    lost_unfinished_id BIGINT NOT NULL UNIQUE,
     lost_unfinished_name VARCHAR(50) NOT NULL,
     lost_unfinished_category INT NOT NULL,
     lost_unfinished_desc VARCHAR(1000),
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS lost_unfinished(
 );
 CREATE TABLE IF NOT EXISTS lost_finished(
     lost_finished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    lost_finished_id BIGINT NOT NULL,
+    lost_finished_id BIGINT NOT NULL UNIQUE,
     lost_finished_name VARCHAR(50) NOT NULL,
     lost_finished_category INT NOT NULL,
     lost_finished_desc VARCHAR(1000),
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS lost_finished(
 );
 CREATE TABLE IF NOT EXISTS lost_unchecked(
     lost_finished_internal_id BIGINT PRIMARY KEY AUTO_INCREMENT,
-    lost_finished_id BIGINT NOT NULL,
+    lost_finished_id BIGINT NOT NULL UNIQUE,
     lost_finished_name VARCHAR(50) NOT NULL,
     lost_finished_category INT NOT NULL,
     lost_finished_desc VARCHAR(1000),
