@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*修改登录和注册请求体">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtAuthenticationEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtRequestFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtTokenUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/CustomUserDetailsService.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*添加SpringBoot Security环境">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/ImgUploadController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalLocationNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/ImageCleanupScheduler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/PublishItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/LocationString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +26,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
+        <option value="Interface" />
         <option value="Enum" />
         <option value="Exception" />
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -168,7 +171,8 @@
       <workItem from="1754125580503" duration="331000" />
       <workItem from="1754125920060" duration="984000" />
       <workItem from="1754126912887" duration="556000" />
-      <workItem from="1754127477755" duration="1349000" />
+      <workItem from="1754127477755" duration="1852000" />
+      <workItem from="1754277986789" duration="8120000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -306,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754125015571</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="*添加SpringBoot Security环境">
+      <option name="closed" value="true" />
+      <created>1754128868786</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1754128868786</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,6 +350,7 @@
     <MESSAGE value="*修复文档爆红（虽然现在还是爆黄）" />
     <MESSAGE value="*补全文档" />
     <MESSAGE value="*修改登录和注册请求体" />
-    <option name="LAST_COMMIT_MESSAGE" value="*修改登录和注册请求体" />
+    <MESSAGE value="*添加SpringBoot Security环境" />
+    <option name="LAST_COMMIT_MESSAGE" value="*添加SpringBoot Security环境" />
   </component>
 </project>
