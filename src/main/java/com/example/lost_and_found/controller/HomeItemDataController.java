@@ -32,7 +32,7 @@ public class HomeItemDataController {
     public ResponseEntity<Response<ResponseCrud<FoundUnfinished>>> searchFoundFinished(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) ItemType type,
-            @RequestParam(required = false) ItemColor color,
+            @RequestParam(required = false) List<ItemColor> color,
             @RequestParam(required = false) String location,
             @RequestParam(required = false) List<Long> showed_ids
     ){

@@ -7,6 +7,7 @@ import com.example.lost_and_found.util.Location;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 用于管理员发布物品的请求dto对象
@@ -16,7 +17,7 @@ import java.time.LocalDateTime;
 public class PublishItemRequest {
     private String name;
     private ItemType type;
-    private ItemColor color;
+    private List<ItemColor> color;
     private String description;
     private Location found_location;
     private String imgUrl;

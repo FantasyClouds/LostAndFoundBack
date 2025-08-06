@@ -100,3 +100,14 @@ CREATE TABLE IF NOT EXISTS lost_unchecked(
     lost_finished_comment JSON,
     lost_unfinished_auditor_id BIGINT NOT NULL REFERENCES auditor(auditor_id)
     );
+
+CREATE TABLE IF NOT EXISTS colors (
+    id INT PRIMARY KEY,
+    name VARCHAR(20)
+);
+
+CREATE TABLE IF NOT EXISTS item_colors (
+     item_id INT,
+     color_id INT FOREIGN KEY REFERENCES colors(id),
+     PRIMARY KEY(item_id, color_id)
+);

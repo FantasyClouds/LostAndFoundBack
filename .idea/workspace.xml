@@ -4,18 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*添加SpringBoot Security环境">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/ImgUploadController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalLocationNameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/ImageCleanupScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/PublishItemService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/LocationString.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/IdGeneratorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IdGenerationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalColorIdException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalColorNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalItemTypeCodeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalItemTypeNameException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/IdGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/HomeItemDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/HomeItemDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/PublishItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/PublishItemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +34,8 @@
         <option value="package-info" />
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Exception" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -172,7 +178,11 @@
       <workItem from="1754125920060" duration="984000" />
       <workItem from="1754126912887" duration="556000" />
       <workItem from="1754127477755" duration="1852000" />
-      <workItem from="1754277986789" duration="8120000" />
+      <workItem from="1754277986789" duration="8959000" />
+      <workItem from="1754297442336" duration="57000" />
+      <workItem from="1754297611502" duration="18000" />
+      <workItem from="1754466224870" duration="2197000" />
+      <workItem from="1754468438892" duration="3753000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -318,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754128868786</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架">
+      <option name="closed" value="true" />
+      <created>1754287807298</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1754287807298</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +369,7 @@
     <MESSAGE value="*补全文档" />
     <MESSAGE value="*修改登录和注册请求体" />
     <MESSAGE value="*添加SpringBoot Security环境" />
-    <option name="LAST_COMMIT_MESSAGE" value="*添加SpringBoot Security环境" />
+    <MESSAGE value="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架" />
   </component>
 </project>
