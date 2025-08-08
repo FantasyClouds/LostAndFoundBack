@@ -2,8 +2,6 @@ package com.example.lost_and_found.util;
 
 import com.example.lost_and_found.exception.IllegalColorIdException;
 import com.example.lost_and_found.exception.IllegalColorNameException;
-import com.example.lost_and_found.exception.IllegalLocationNameException;
-
 /**
  * 失物颜色枚举值
  */

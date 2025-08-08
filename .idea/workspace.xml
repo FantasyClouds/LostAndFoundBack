@@ -4,23 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/IdGeneratorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IdGenerationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalColorIdException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalColorNameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalItemTypeCodeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/exception/IllegalItemTypeNameException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/IdGenerator.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*新增表color和多对多关系表item_color，用于储存物品颜色信息。&#10;*修改Controller中的颜色API接口，使其包含多种颜色&#10;*增加枚举类的汉字和数据映射&#10;*增加查询id的工具类，添加生成id功能。">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/FileStorageProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/PublishItemDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/ItemColorMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/FileMover.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/HomeItemDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/HomeItemDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/ImgUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/ImgUploadController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/dto/PublishItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/Auditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/Auditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundFinished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundUnfinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/FoundUnfinished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/ItemAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/ItemAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostFinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostFinished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnchecked.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnchecked.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnfinished.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/entity/LostUnfinished.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/FoundUnfinishedMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/mapper/FoundUnfinishedMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/PublishItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/PublishItemService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/LocationString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/LocationString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +39,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -103,32 +110,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.lost_and_found [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.lost_and_found [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [test].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Test1Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codes/Java/LostAndFound&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.lost_and_found [clean].executor": "Run",
+    "Maven.lost_and_found [install].executor": "Run",
+    "Maven.test1 [clean].executor": "Run",
+    "Maven.test1 [compile].executor": "Run",
+    "Maven.test1 [install].executor": "Run",
+    "Maven.test1 [test].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Test1Application.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Codes/Java/LostAndFound",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "MySQL"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RunManager">
     <configuration name="Test1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="lost_and_found" />
@@ -182,7 +197,10 @@
       <workItem from="1754297442336" duration="57000" />
       <workItem from="1754297611502" duration="18000" />
       <workItem from="1754466224870" duration="2197000" />
-      <workItem from="1754468438892" duration="3753000" />
+      <workItem from="1754468438892" duration="4506000" />
+      <workItem from="1754560668702" duration="1049000" />
+      <workItem from="1754634678587" duration="5129000" />
+      <workItem from="1754645376748" duration="4637000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -336,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754287807298</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="*新增表color和多对多关系表item_color，用于储存物品颜色信息。&#10;*修改Controller中的颜色API接口，使其包含多种颜色&#10;*增加枚举类的汉字和数据映射&#10;*增加查询id的工具类，添加生成id功能。">
+      <option name="closed" value="true" />
+      <created>1754473577501</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1754473577501</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +396,7 @@
     <MESSAGE value="*修改登录和注册请求体" />
     <MESSAGE value="*添加SpringBoot Security环境" />
     <MESSAGE value="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架" />
-    <option name="LAST_COMMIT_MESSAGE" value="*新增Location枚举值和LocationString类，用于统一管理地点信息&#10;*增加上传图片逻辑&#10;*增加发布物品逻辑框架" />
+    <MESSAGE value="*新增表color和多对多关系表item_color，用于储存物品颜色信息。&#10;*修改Controller中的颜色API接口，使其包含多种颜色&#10;*增加枚举类的汉字和数据映射&#10;*增加查询id的工具类，添加生成id功能。" />
+    <option name="LAST_COMMIT_MESSAGE" value="*新增表color和多对多关系表item_color，用于储存物品颜色信息。&#10;*修改Controller中的颜色API接口，使其包含多种颜色&#10;*增加枚举类的汉字和数据映射&#10;*增加查询id的工具类，添加生成id功能。" />
   </component>
 </project>

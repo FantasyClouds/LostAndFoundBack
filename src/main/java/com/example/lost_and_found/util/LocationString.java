@@ -14,6 +14,7 @@ public class LocationString {
         this.detail = detail;
         this.locationString = calculateLocationString(location, detail);
     }
+
     private String calculateLocationString(Location location, String detail) {
         this.location = location;
         this.detail = detail;
@@ -28,7 +29,7 @@ public class LocationString {
     /**
      * 用于获取地点字符串。
      */
-    public String getLocationString() {
+    public String getString() {
         return locationString;
     }
     /**

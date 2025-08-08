@@ -37,10 +37,6 @@ public class FoundUnfinished {
     @TableField
     private String found_unfinished_location;
 
-    // 颜色，非空
-    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
-    private ItemColor found_color;
-
     // 图片url
     @TableField
     private String found_unfinished_img_url;
@@ -56,17 +52,15 @@ public class FoundUnfinished {
     public FoundUnfinished() {
     }
 
-    public FoundUnfinished(Long found_unfinished_internal_id, String found_unfinished_name, Long found_unfinished_id,
+    public FoundUnfinished(Long found_unfinished_id, String found_unfinished_name,
                            ItemType found_unfinished_category, String found_unfinished_desc, String found_unfinished_location,
-                           ItemColor found_color, String found_unfinished_img_url, LocalDateTime found_unfinished_found_time,
+                           String found_unfinished_img_url, LocalDateTime found_unfinished_found_time,
                            LocalDateTime found_unfinished_public_time) {
-        this.found_unfinished_internal_id = found_unfinished_internal_id;
         this.found_unfinished_name = found_unfinished_name;
         this.found_unfinished_id = found_unfinished_id;
         this.found_unfinished_category = found_unfinished_category;
         this.found_unfinished_desc = found_unfinished_desc;
         this.found_unfinished_location = found_unfinished_location;
-        this.found_color = found_color;
         this.found_unfinished_img_url = found_unfinished_img_url;
         this.found_unfinished_found_time = found_unfinished_found_time;
         this.found_unfinished_public_time = found_unfinished_public_time;
@@ -144,18 +138,6 @@ public class FoundUnfinished {
         this.found_unfinished_location = found_unfinished_location;
     }
     /**
-     * 颜色，非空
-     */
-    public ItemColor getFound_color() {
-        return found_color;
-    }
-    /**
-     * 颜色，非空
-     */
-    public void setFound_color(ItemColor found_color) {
-        this.found_color = found_color;
-    }
-    /**
      * 图片url
      */
     public String getFound_unfinished_img_url() {
@@ -201,7 +183,6 @@ public class FoundUnfinished {
                 ", found_unfinished_category=" + found_unfinished_category +
                 ", found_unfinished_desc='" + found_unfinished_desc + '\'' +
                 ", found_unfinished_location='" + found_unfinished_location + '\'' +
-                ", found_color=" + found_color +
                 ", found_unfinished_img_url='" + found_unfinished_img_url + '\'' +
                 ", found_unfinished_found_time=" + found_unfinished_found_time +
                 ", found_unfinished_public_time=" + found_unfinished_public_time +

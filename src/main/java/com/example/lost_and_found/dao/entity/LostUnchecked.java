@@ -39,10 +39,6 @@ public class LostUnchecked {
     @TableField
     private String lost_unchecked_location;
 
-    // 颜色（非空）
-    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
-    private ItemColor lost_color;
-
     // 图片地址
     @TableField
     private String lost_unchecked_img_url;
@@ -70,18 +66,16 @@ public class LostUnchecked {
     public LostUnchecked() {
     }
 
-    public LostUnchecked(Long lost_unchecked_internal_id, Long lost_unchecked_id, String lost_unchecked_name,
+    public LostUnchecked(Long lost_unchecked_id, String lost_unchecked_name,
                         ItemType lost_unchecked_category, String lost_unchecked_desc, String lost_unchecked_location,
-                        ItemColor lost_color, String lost_unchecked_img_url, LocalDateTime lost_unchecked_lost_time,
+                        String lost_unchecked_img_url, LocalDateTime lost_unchecked_lost_time,
                         LocalDateTime lost_unchecked_public_time, LocalDateTime lost_unchecked_finish_time,
                         JsonNode lost_unchecked_comment, Long lost_unchecked_author_id) {
-        this.lost_unchecked_internal_id = lost_unchecked_internal_id;
         this.lost_unchecked_id = lost_unchecked_id;
         this.lost_unchecked_name = lost_unchecked_name;
         this.lost_unchecked_category = lost_unchecked_category;
         this.lost_unchecked_desc = lost_unchecked_desc;
         this.lost_unchecked_location = lost_unchecked_location;
-        this.lost_color = lost_color;
         this.lost_unchecked_img_url = lost_unchecked_img_url;
         this.lost_unchecked_lost_time = lost_unchecked_lost_time;
         this.lost_unchecked_public_time = lost_unchecked_public_time;
@@ -160,18 +154,6 @@ public class LostUnchecked {
      */
     public void setLost_unchecked_location(String lost_unchecked_location) {
         this.lost_unchecked_location = lost_unchecked_location;
-    }
-    /**
-     * 颜色（非空）
-     */
-    public ItemColor getLost_color() {
-        return lost_color;
-    }
-    /**
-     * 颜色（非空）
-     */
-    public void setLost_color(ItemColor lost_color) {
-        this.lost_color = lost_color;
     }
     /**
      * 图片地址
@@ -255,7 +237,6 @@ public class LostUnchecked {
                 ", lost_unchecked_category=" + lost_unchecked_category +
                 ", lost_unchecked_desc='" + lost_unchecked_desc + '\'' +
                 ", lost_unchecked_location='" + lost_unchecked_location + '\'' +
-                ", lost_color=" + lost_color +
                 ", lost_unchecked_img_url='" + lost_unchecked_img_url + '\'' +
                 ", lost_unchecked_lost_time=" + lost_unchecked_lost_time +
                 ", lost_unchecked_public_time=" + lost_unchecked_public_time +

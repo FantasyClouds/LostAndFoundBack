@@ -39,10 +39,6 @@ public class FoundFinished {
     @TableField
     private String found_finished_location;
 
-    // 颜色（非空）
-    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
-    private ItemColor found_color;
-
     // 图片url
     @TableField
     private String found_finished_img_url;
@@ -66,18 +62,16 @@ public class FoundFinished {
     public FoundFinished() {
     }
 
-    public FoundFinished(Long found_finished_internal_id, Long found_finished_id, String found_finished_name,
+    public FoundFinished(Long found_finished_id, String found_finished_name,
                          ItemType found_finished_category, String found_finished_desc, String found_finished_location,
-                         ItemColor found_color, String found_finished_img_url, LocalDateTime found_finished_found_time,
+                         String found_finished_img_url, LocalDateTime found_finished_found_time,
                          LocalDateTime found_finished_public_time, LocalDateTime found_finished_finish_time,
                          JsonNode lost_unfinished_comment) {
-        this.found_finished_internal_id = found_finished_internal_id;
         this.found_finished_id = found_finished_id;
         this.found_finished_name = found_finished_name;
         this.found_finished_category = found_finished_category;
         this.found_finished_desc = found_finished_desc;
         this.found_finished_location = found_finished_location;
-        this.found_color = found_color;
         this.found_finished_img_url = found_finished_img_url;
         this.found_finished_found_time = found_finished_found_time;
         this.found_finished_public_time = found_finished_public_time;
@@ -166,20 +160,6 @@ public class FoundFinished {
     }
 
     /**
-     * 颜色（非空）
-     */
-    public ItemColor getFound_color() {
-        return found_color;
-    }
-
-    /**
-     * 颜色（非空）
-     */
-    public void setFound_color(ItemColor found_color) {
-        this.found_color = found_color;
-    }
-
-    /**
      * 图片url
      */
     public String getFound_finished_img_url() {
@@ -258,7 +238,6 @@ public class FoundFinished {
                 ", found_finished_category=" + found_finished_category +
                 ", found_finished_desc='" + found_finished_desc + '\'' +
                 ", found_finished_location='" + found_finished_location + '\'' +
-                ", found_color=" + found_color +
                 ", found_finished_img_url='" + found_finished_img_url + '\'' +
                 ", found_finished_found_time=" + found_finished_found_time +
                 ", found_finished_public_time=" + found_finished_public_time +

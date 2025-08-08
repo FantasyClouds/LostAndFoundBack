@@ -17,10 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class PublishItemController {
-
-    @Autowired
     private final PublishItemService publishItemService;
 
+    @Autowired
     public PublishItemController(PublishItemService publishItemService) {
         this.publishItemService = publishItemService;
     }
@@ -43,8 +42,6 @@ public class PublishItemController {
         } catch (Exception e){
 
         }
-
-
         response.status = HttpStatus.OK;
         response.msg = "发布成功";
         response.data = true;

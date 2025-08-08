@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS found_unfinished(
     found_unfinished_category INT NOT NULL,
     found_unfinished_desc VARCHAR(1000),
     found_unfinished_location VARCHAR(50),
-    found_color INT NOT NULL,
     found_unfinished_img_url VARCHAR(200),
     found_unfinished_found_time DATETIME,
     found_unfinished_public_time DATETIME
@@ -50,7 +49,6 @@ CREATE TABLE IF NOT EXISTS found_finished(
     found_finished_category INT NOT NULL,
     found_finished_desc VARCHAR(1000),
     found_finished_location VARCHAR(50),
-    item_color INT NOT NULL,
     found_finished_img_url VARCHAR(200),
     found_finished_found_time DATETIME,
     found_finished_public_time DATETIME,
@@ -63,7 +61,6 @@ CREATE TABLE IF NOT EXISTS lost_unfinished(
     lost_unfinished_category INT NOT NULL,
     lost_unfinished_desc VARCHAR(1000),
     lost_unfinished_location VARCHAR(50),
-    lost_color INT NOT NULL,
     lost_unfinished_img_url VARCHAR(200),
     lost_unfinished_lost_time DATETIME,
     lost_unfinished_public_time DATETIME,
@@ -77,7 +74,6 @@ CREATE TABLE IF NOT EXISTS lost_finished(
     lost_finished_category INT NOT NULL,
     lost_finished_desc VARCHAR(1000),
     lost_finished_location VARCHAR(50),
-    lost_color INT NOT NULL,
     lost_finished_img_url VARCHAR(200),
     lost_finished_lost_time DATETIME,
     lost_finished_public_time DATETIME,
@@ -92,7 +88,6 @@ CREATE TABLE IF NOT EXISTS lost_unchecked(
     lost_finished_category INT NOT NULL,
     lost_finished_desc VARCHAR(1000),
     lost_finished_location VARCHAR(50),
-    lost_color INT NOT NULL,
     lost_finished_img_url VARCHAR(200),
     lost_finished_lost_time DATETIME,
     lost_finished_public_time DATETIME,
@@ -108,6 +103,7 @@ CREATE TABLE IF NOT EXISTS colors (
 
 CREATE TABLE IF NOT EXISTS item_colors (
      item_id INT,
-     color_id INT FOREIGN KEY REFERENCES colors(id),
-     PRIMARY KEY(item_id, color_id)
+     color_id INT,
+     PRIMARY KEY(item_id, color_id),
+     FOREIGN KEY (color_id) REFERENCES colors(id)
 );

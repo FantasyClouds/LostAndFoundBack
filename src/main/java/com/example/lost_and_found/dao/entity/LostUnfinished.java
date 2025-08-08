@@ -67,11 +67,10 @@ public class LostUnfinished {
     public LostUnfinished() {
     }
 
-    public LostUnfinished(Long lost_unfinished_internal_id, Long lost_unfinished_id, String lost_unfinished_name,
+    public LostUnfinished(Long lost_unfinished_id, String lost_unfinished_name,
                           ItemType lost_unfinished_category, String lost_unfinished_desc, ItemColor lost_color,
                           String lost_unfinished_location, String lost_unfinished_img_url, LocalDateTime lost_unfinished_lost_time,
                           LocalDateTime lost_unfinished_public_time) {
-        this.lost_unfinished_internal_id = lost_unfinished_internal_id;
         this.lost_unfinished_id = lost_unfinished_id;
         this.lost_unfinished_name = lost_unfinished_name;
         this.lost_unfinished_category = lost_unfinished_category;

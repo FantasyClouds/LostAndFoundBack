@@ -28,8 +28,7 @@ public class Auditor {
 
     public Auditor() {}
 
-    public Auditor(Long auditor_internal_id, Long auditor_id, String auditor_name, String auditor_password) {
-        this.auditor_internal_id = auditor_internal_id;
+    public Auditor(Long auditor_id, String auditor_name, String auditor_password) {
         this.auditor_id = auditor_id;
         this.auditor_name = auditor_name;
         this.auditor_password = auditor_password;

@@ -39,10 +39,6 @@ public class LostFinished {
     @TableField
     private String lost_finished_location;
 
-    // 颜色（非空）
-    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
-    private ItemColor lost_color;
-
     // 图片地址
     @TableField
     private String lost_finished_img_url;
@@ -70,18 +66,16 @@ public class LostFinished {
     public LostFinished() {
     }
 
-    public LostFinished(Long lost_finished_internal_id, Long lost_finished_id, String lost_finished_name,
+    public LostFinished(Long lost_finished_id, String lost_finished_name,
                         ItemType lost_finished_category, String lost_finished_desc, String lost_finished_location,
-                        ItemColor lost_color, String lost_finished_img_url, LocalDateTime lost_finished_lost_time,
+                        String lost_finished_img_url, LocalDateTime lost_finished_lost_time,
                         LocalDateTime lost_finished_public_time, LocalDateTime lost_finished_finish_time,
                         JsonNode lost_finished_comment, Long lost_finished__auditor_id) {
-        this.lost_finished_internal_id = lost_finished_internal_id;
         this.lost_finished_id = lost_finished_id;
         this.lost_finished_name = lost_finished_name;
         this.lost_finished_category = lost_finished_category;
         this.lost_finished_desc = lost_finished_desc;
         this.lost_finished_location = lost_finished_location;
-        this.lost_color = lost_color;
         this.lost_finished_img_url = lost_finished_img_url;
         this.lost_finished_lost_time = lost_finished_lost_time;
         this.lost_finished_public_time = lost_finished_public_time;
@@ -160,18 +154,6 @@ public class LostFinished {
      */
     public void setLost_finished_location(String lost_finished_location) {
         this.lost_finished_location = lost_finished_location;
-    }
-    /**
-     * 颜色（非空）
-     */
-    public ItemColor getLost_color() {
-        return lost_color;
-    }
-    /**
-     * 颜色（非空）
-     */
-    public void setLost_color(ItemColor lost_color) {
-        this.lost_color = lost_color;
     }
     /**
      * 图片地址
@@ -255,7 +237,6 @@ public class LostFinished {
                 ", lost_finished_category=" + lost_finished_category +
                 ", lost_finished_desc='" + lost_finished_desc + '\'' +
                 ", lost_finished_location='" + lost_finished_location + '\'' +
-                ", lost_color=" + lost_color +
                 ", lost_finished_img_url='" + lost_finished_img_url + '\'' +
                 ", lost_finished_lost_time=" + lost_finished_lost_time +
                 ", lost_finished_public_time=" + lost_finished_public_time +

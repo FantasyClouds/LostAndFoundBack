@@ -27,8 +27,7 @@ public class ItemAdmin {
 
     public ItemAdmin() {}
 
-    public ItemAdmin(Long lost_admin_internal_id, Long lost_admin_id, String lost_admin_name, String lost_admin_password) {
-        this.lost_admin_internal_id = lost_admin_internal_id;
+    public ItemAdmin(Long lost_admin_id, String lost_admin_name, String lost_admin_password) {
         this.lost_admin_id = lost_admin_id;
         this.lost_admin_name = lost_admin_name;
         this.lost_admin_password = lost_admin_password;
