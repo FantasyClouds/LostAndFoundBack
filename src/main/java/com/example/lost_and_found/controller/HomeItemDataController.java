@@ -1,6 +1,6 @@
 package com.example.lost_and_found.controller;
 
-import com.example.lost_and_found.dao.entity.FoundUnfinished;
+import com.example.lost_and_found.dao.dto.FoundUnfinishedDto;
 import com.example.lost_and_found.util.ItemColor;
 import com.example.lost_and_found.util.ItemType;
 import com.example.lost_and_found.util.Response;
@@ -29,15 +29,15 @@ public class HomeItemDataController {
      * 需求的最后一个参数showed_ids用于向前端请求有哪些旧数据。
      */
     @GetMapping("/home/itemData/search/foundFinished")
-    public ResponseEntity<Response<ResponseCrud<FoundUnfinished>>> searchFoundFinished(
+    public ResponseEntity<Response<ResponseCrud<FoundUnfinishedDto>>> searchFoundUnFinished(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) ItemType type,
             @RequestParam(required = false) List<ItemColor> color,
             @RequestParam(required = false) String location,
             @RequestParam(required = false) List<Long> showed_ids
     ){
-        log.info("searchFoundFinished()");
-        Response<ResponseCrud<FoundUnfinished>> response = new Response<>();
+        log.info("searchFoundUnFinished()");
+        Response<ResponseCrud<FoundUnfinishedDto>> response = new Response<>();
         // TODO: 请实现搜索逻辑
 
 

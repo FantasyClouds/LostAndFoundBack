@@ -2,7 +2,6 @@
 package com.example.lost_and_found.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.example.lost_and_found.util.ItemColor;
 import com.example.lost_and_found.util.ItemType;
 
 import java.time.LocalDateTime;
@@ -10,7 +9,7 @@ import java.time.LocalDateTime;
 /**
  * 未完成的失物招领
  */
-@TableName("found_unfinshed")
+@TableName("found_unfinished")
 public class FoundUnfinished {
 
     // 内部id，自动生成
@@ -47,7 +46,7 @@ public class FoundUnfinished {
 
     // 发布时间
     @TableField
-    private LocalDateTime found_unfinished_public_time;
+    private LocalDateTime found_unfinished_publish_time;
 
     public FoundUnfinished() {
     }
@@ -55,7 +54,7 @@ public class FoundUnfinished {
     public FoundUnfinished(Long found_unfinished_id, String found_unfinished_name,
                            ItemType found_unfinished_category, String found_unfinished_desc, String found_unfinished_location,
                            String found_unfinished_img_url, LocalDateTime found_unfinished_found_time,
-                           LocalDateTime found_unfinished_public_time) {
+                           LocalDateTime found_unfinished_publish_time) {
         this.found_unfinished_name = found_unfinished_name;
         this.found_unfinished_id = found_unfinished_id;
         this.found_unfinished_category = found_unfinished_category;
@@ -63,7 +62,7 @@ public class FoundUnfinished {
         this.found_unfinished_location = found_unfinished_location;
         this.found_unfinished_img_url = found_unfinished_img_url;
         this.found_unfinished_found_time = found_unfinished_found_time;
-        this.found_unfinished_public_time = found_unfinished_public_time;
+        this.found_unfinished_publish_time = found_unfinished_publish_time;
     }
     /**
      * 内部id，自动生成
@@ -164,14 +163,14 @@ public class FoundUnfinished {
     /**
      * 发布时间
      */
-    public LocalDateTime getFound_unfinished_public_time() {
-        return found_unfinished_public_time;
+    public LocalDateTime getFound_unfinished_publish_time() {
+        return found_unfinished_publish_time;
     }
     /**
      * 发布时间
      */
-    public void setFound_unfinished_public_time(LocalDateTime found_unfinished_public_time) {
-        this.found_unfinished_public_time = found_unfinished_public_time;
+    public void setFound_unfinished_publish_time(LocalDateTime found_unfinished_publish_time) {
+        this.found_unfinished_publish_time = found_unfinished_publish_time;
     }
 
     @Override
@@ -185,7 +184,7 @@ public class FoundUnfinished {
                 ", found_unfinished_location='" + found_unfinished_location + '\'' +
                 ", found_unfinished_img_url='" + found_unfinished_img_url + '\'' +
                 ", found_unfinished_found_time=" + found_unfinished_found_time +
-                ", found_unfinished_public_time=" + found_unfinished_public_time +
+                ", found_unfinished_publish_time=" + found_unfinished_publish_time +
                 '}';
     }
 }

@@ -3,7 +3,6 @@ package com.example.lost_and_found.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
-import com.example.lost_and_found.util.ItemColor;
 import com.example.lost_and_found.util.ItemType;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -49,7 +48,7 @@ public class LostUnchecked {
 
     // 发布时间
     @TableField
-    private LocalDateTime lost_unchecked_public_time;
+    private LocalDateTime lost_unchecked_publish_time;
 
     // 完成时间
     @TableField
@@ -67,10 +66,10 @@ public class LostUnchecked {
     }
 
     public LostUnchecked(Long lost_unchecked_id, String lost_unchecked_name,
-                        ItemType lost_unchecked_category, String lost_unchecked_desc, String lost_unchecked_location,
-                        String lost_unchecked_img_url, LocalDateTime lost_unchecked_lost_time,
-                        LocalDateTime lost_unchecked_public_time, LocalDateTime lost_unchecked_finish_time,
-                        JsonNode lost_unchecked_comment, Long lost_unchecked_author_id) {
+                         ItemType lost_unchecked_category, String lost_unchecked_desc, String lost_unchecked_location,
+                         String lost_unchecked_img_url, LocalDateTime lost_unchecked_lost_time,
+                         LocalDateTime lost_unchecked_publish_time, LocalDateTime lost_unchecked_finish_time,
+                         JsonNode lost_unchecked_comment, Long lost_unchecked_author_id) {
         this.lost_unchecked_id = lost_unchecked_id;
         this.lost_unchecked_name = lost_unchecked_name;
         this.lost_unchecked_category = lost_unchecked_category;
@@ -78,7 +77,7 @@ public class LostUnchecked {
         this.lost_unchecked_location = lost_unchecked_location;
         this.lost_unchecked_img_url = lost_unchecked_img_url;
         this.lost_unchecked_lost_time = lost_unchecked_lost_time;
-        this.lost_unchecked_public_time = lost_unchecked_public_time;
+        this.lost_unchecked_publish_time = lost_unchecked_publish_time;
         this.lost_unchecked_finish_time = lost_unchecked_finish_time;
         this.lost_unchecked_comment = lost_unchecked_comment;
         this.lost_unchecked_author_id = lost_unchecked_author_id;
@@ -182,14 +181,14 @@ public class LostUnchecked {
     /**
      * 发布时间
      */
-    public LocalDateTime getLost_unchecked_public_time() {
-        return lost_unchecked_public_time;
+    public LocalDateTime getLost_unchecked_publish_time() {
+        return lost_unchecked_publish_time;
     }
     /**
      * 发布时间
      */
-    public void setLost_unchecked_public_time(LocalDateTime lost_unchecked_public_time) {
-        this.lost_unchecked_public_time = lost_unchecked_public_time;
+    public void setLost_unchecked_publish_time(LocalDateTime lost_unchecked_publish_time) {
+        this.lost_unchecked_publish_time = lost_unchecked_publish_time;
     }
     /**
      * 完成时间
@@ -239,7 +238,7 @@ public class LostUnchecked {
                 ", lost_unchecked_location='" + lost_unchecked_location + '\'' +
                 ", lost_unchecked_img_url='" + lost_unchecked_img_url + '\'' +
                 ", lost_unchecked_lost_time=" + lost_unchecked_lost_time +
-                ", lost_unchecked_public_time=" + lost_unchecked_public_time +
+                ", lost_unchecked_publish_time=" + lost_unchecked_publish_time +
                 ", lost_unchecked_finish_time=" + lost_unchecked_finish_time +
                 '}';
     }

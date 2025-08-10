@@ -3,7 +3,6 @@ package com.example.lost_and_found.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
-import com.example.lost_and_found.util.ItemColor;
 import com.example.lost_and_found.util.ItemType;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -49,7 +48,7 @@ public class LostFinished {
 
     // 发布时间
     @TableField
-    private LocalDateTime lost_finished_public_time;
+    private LocalDateTime lost_finished_publish_time;
 
     // 完成时间
     @TableField
@@ -69,7 +68,7 @@ public class LostFinished {
     public LostFinished(Long lost_finished_id, String lost_finished_name,
                         ItemType lost_finished_category, String lost_finished_desc, String lost_finished_location,
                         String lost_finished_img_url, LocalDateTime lost_finished_lost_time,
-                        LocalDateTime lost_finished_public_time, LocalDateTime lost_finished_finish_time,
+                        LocalDateTime lost_finished_publish_time, LocalDateTime lost_finished_finish_time,
                         JsonNode lost_finished_comment, Long lost_finished__auditor_id) {
         this.lost_finished_id = lost_finished_id;
         this.lost_finished_name = lost_finished_name;
@@ -78,7 +77,7 @@ public class LostFinished {
         this.lost_finished_location = lost_finished_location;
         this.lost_finished_img_url = lost_finished_img_url;
         this.lost_finished_lost_time = lost_finished_lost_time;
-        this.lost_finished_public_time = lost_finished_public_time;
+        this.lost_finished_publish_time = lost_finished_publish_time;
         this.lost_finished_finish_time = lost_finished_finish_time;
         this.lost_finished_comment = lost_finished_comment;
         this.lost_finished__auditor_id = lost_finished__auditor_id;
@@ -182,14 +181,14 @@ public class LostFinished {
     /**
      * 发布时间
      */
-    public LocalDateTime getLost_finished_public_time() {
-        return lost_finished_public_time;
+    public LocalDateTime getLost_finished_publish_time() {
+        return lost_finished_publish_time;
     }
     /**
      * 发布时间
      */
-    public void setLost_finished_public_time(LocalDateTime lost_finished_public_time) {
-        this.lost_finished_public_time = lost_finished_public_time;
+    public void setLost_finished_publish_time(LocalDateTime lost_finished_publish_time) {
+        this.lost_finished_publish_time = lost_finished_publish_time;
     }
     /**
      * 完成时间
@@ -239,7 +238,7 @@ public class LostFinished {
                 ", lost_finished_location='" + lost_finished_location + '\'' +
                 ", lost_finished_img_url='" + lost_finished_img_url + '\'' +
                 ", lost_finished_lost_time=" + lost_finished_lost_time +
-                ", lost_finished_public_time=" + lost_finished_public_time +
+                ", lost_finished_publish_time=" + lost_finished_publish_time +
                 ", lost_finished_finish_time=" + lost_finished_finish_time +
                 '}';
     }

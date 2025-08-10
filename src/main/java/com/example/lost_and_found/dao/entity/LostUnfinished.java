@@ -53,7 +53,7 @@ public class LostUnfinished {
 
     // 发布时间
     @TableField
-    private LocalDateTime lost_unfinished_public_time;
+    private LocalDateTime lost_unfinished_publish_time;
 
     // 评论区
     @TableField(typeHandler = JacksonTypeHandler.class)
@@ -70,7 +70,7 @@ public class LostUnfinished {
     public LostUnfinished(Long lost_unfinished_id, String lost_unfinished_name,
                           ItemType lost_unfinished_category, String lost_unfinished_desc, ItemColor lost_color,
                           String lost_unfinished_location, String lost_unfinished_img_url, LocalDateTime lost_unfinished_lost_time,
-                          LocalDateTime lost_unfinished_public_time) {
+                          LocalDateTime lost_unfinished_publish_time) {
         this.lost_unfinished_id = lost_unfinished_id;
         this.lost_unfinished_name = lost_unfinished_name;
         this.lost_unfinished_category = lost_unfinished_category;
@@ -79,7 +79,7 @@ public class LostUnfinished {
         this.lost_unfinished_location = lost_unfinished_location;
         this.lost_unfinished_img_url = lost_unfinished_img_url;
         this.lost_unfinished_lost_time = lost_unfinished_lost_time;
-        this.lost_unfinished_public_time = lost_unfinished_public_time;
+        this.lost_unfinished_publish_time = lost_unfinished_publish_time;
     }
     /**
      * 内部id，自动生成
@@ -192,14 +192,14 @@ public class LostUnfinished {
     /**
      * 发布时间
      */
-    public LocalDateTime getLost_unfinished_public_time() {
-        return lost_unfinished_public_time;
+    public LocalDateTime getLost_unfinished_publish_time() {
+        return lost_unfinished_publish_time;
     }
     /**
      * 发布时间
      */
-    public void setLost_unfinished_public_time(LocalDateTime lost_unfinished_public_time) {
-        this.lost_unfinished_public_time = lost_unfinished_public_time;
+    public void setLost_unfinished_publish_time(LocalDateTime lost_unfinished_publish_time) {
+        this.lost_unfinished_publish_time = lost_unfinished_publish_time;
     }
     /**
      * 评论区
@@ -238,7 +238,7 @@ public class LostUnfinished {
                 ", lost_unfinished_location='" + lost_unfinished_location + '\'' +
                 ", lost_unfinished_img_url='" + lost_unfinished_img_url + '\'' +
                 ", lost_unfinished_lost_time=" + lost_unfinished_lost_time +
-                ", lost_unfinished_public_time=" + lost_unfinished_public_time +
+                ", lost_unfinished_publish_time=" + lost_unfinished_publish_time +
                 '}';
     }
 }
