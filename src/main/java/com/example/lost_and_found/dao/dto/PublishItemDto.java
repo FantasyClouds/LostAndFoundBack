@@ -1,8 +1,8 @@
 package com.example.lost_and_found.dao.dto;
 
-import com.example.lost_and_found.dao.entity.ItemColorConnect;
 import com.example.lost_and_found.util.ItemColor;
 import com.example.lost_and_found.util.ItemType;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * 用于发布物品和数据库对接的DTO
  */
+@Data
 public class PublishItemDto {
     private Long id;
     private String title;

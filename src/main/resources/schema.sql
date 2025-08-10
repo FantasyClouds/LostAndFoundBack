@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS colors (
 );
 
 CREATE TABLE IF NOT EXISTS item_colors (
-     item_id INT,
+     item_id BIGINT,
      color_id INT,
      PRIMARY KEY(item_id, color_id),
      FOREIGN KEY (color_id) REFERENCES colors(id)

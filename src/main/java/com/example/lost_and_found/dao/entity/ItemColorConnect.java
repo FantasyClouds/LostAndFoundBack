@@ -10,15 +10,16 @@ import com.baomidou.mybatisplus.annotation.TableName;
  */
 @TableName("item_colors")
 public class ItemColorConnect {
-    @TableId
+    @TableId("item_id")
     private Long item_id;
-    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY)
-    private int color_id;
+    @TableField(insertStrategy = FieldStrategy.NOT_EMPTY, value ="color_id")
+    private Integer color_id;
 
     public ItemColorConnect() {
     }
-    public ItemColorConnect(Long item_id, int color_id) {
-
+    public ItemColorConnect(Long item_id, Integer color_id) {
+        this.item_id = item_id;
+        this.color_id = color_id;
     }
 
     /**
@@ -41,7 +42,7 @@ public class ItemColorConnect {
      * 颜色id
      * @return
      */
-    public int getColor_id() {
+    public Integer getColor_id() {
         return color_id;
     }
 
@@ -49,7 +50,7 @@ public class ItemColorConnect {
      * 颜色id
      * @param color_id
      */
-    public void setColor_id(int color_id) {
+    public void setColor_id(Integer color_id) {
         this.color_id = color_id;
     }
 
