@@ -47,7 +47,6 @@ public class ImgUploadController {
     ){
         log.info("uploadImg()");
         Response<String> response = new Response<>();
-        // TODO: 上传图片逻辑
         // 配置存储路径（可放在application.properties）
         try {
             // 校验文件

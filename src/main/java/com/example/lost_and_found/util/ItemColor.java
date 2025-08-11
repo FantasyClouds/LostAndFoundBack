@@ -2,6 +2,7 @@ package com.example.lost_and_found.util;
 
 import com.example.lost_and_found.exception.IllegalColorIdException;
 import com.example.lost_and_found.exception.IllegalColorNameException;
+import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * 失物颜色枚举值
  */
@@ -35,7 +36,9 @@ public enum ItemColor {
 
     /**
      * 用于获取枚举的中文名
+     * 指定用 name 属性作为序列化值
      */
+    @JsonValue //指定用 name 属性作为序列化值
     public String getName() {
         return name;
     }
