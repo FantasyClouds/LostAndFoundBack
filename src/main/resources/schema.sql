@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS item_colors (
      FOREIGN KEY (color_id) REFERENCES colors(id)
 );
 -- 设备表
-CREATE TABLE user_devices (
+CREATE TABLE IF NOT EXISTS user_devices (
       id BIGINT PRIMARY KEY AUTO_INCREMENT,
       user_id BIGINT NOT NULL,
       device_hash VARCHAR(64) NOT NULL, -- 设备指纹的哈希值
