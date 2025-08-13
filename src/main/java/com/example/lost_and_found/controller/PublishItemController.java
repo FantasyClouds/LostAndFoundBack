@@ -34,9 +34,6 @@ public class PublishItemController {
     ){
         log.info("publishItem()");
         Response<Boolean> response = new Response<>();
-        // TODO: 发布逻辑
-        // TODO: 调用service层的发布方法，返回成发布功与否。
-        // TODO: 注意对publishItemRequest判空
         try{
             publishItemService.publishItem(publishItemRequest);
         } catch (Exception e){

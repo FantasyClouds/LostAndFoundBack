@@ -2,6 +2,7 @@ package com.example.lost_and_found.util;
 
 import com.example.lost_and_found.exception.IllegalItemTypeCodeException;
 import com.example.lost_and_found.exception.IllegalItemTypeNameException;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * 失物类型枚举值
@@ -28,7 +29,10 @@ public enum ItemType {
 
     /**
      * 用于获取枚举的中文名
+     * 指定用 name 属性作为序列化值
      */
+    //指定用 name 属性作为序列化值
+    @JsonValue
     public String getName() {
         return name;
     }

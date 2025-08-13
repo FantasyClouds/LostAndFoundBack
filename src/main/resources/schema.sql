@@ -107,3 +107,11 @@ CREATE TABLE IF NOT EXISTS item_colors (
      PRIMARY KEY(item_id, color_id),
      FOREIGN KEY (color_id) REFERENCES colors(id)
 );
+-- 设备表
+CREATE TABLE IF NOT EXISTS user_devices (
+      id BIGINT PRIMARY KEY AUTO_INCREMENT,
+      user_id BIGINT NOT NULL,
+      device_hash VARCHAR(64) NOT NULL, -- 设备指纹的哈希值
+      last_login DATETIME,
+      INDEX idx_user_device (user_id, device_hash)
+);

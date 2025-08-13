@@ -1,6 +1,7 @@
 package com.example.lost_and_found.util;
 
 import com.example.lost_and_found.exception.IllegalLocationNameException;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * 位置枚举类
@@ -33,7 +34,10 @@ public enum Location {
 
     /**
      * 用于获取枚举的中文名
+     * 指定用 name 属性作为序列化值
      */
+    //指定用 name 属性作为序列化值
+    @JsonValue
     public String getName() {
         return name;
     }
