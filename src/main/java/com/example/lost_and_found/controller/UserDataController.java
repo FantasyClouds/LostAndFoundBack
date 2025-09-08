@@ -1,8 +1,6 @@
 package com.example.lost_and_found.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class UserDataController {
     /**
-     *
+     * 用于从服务器获取用户账号名的接口，传入数据为
      */
     @GetMapping("/userdata/name")
     public String getUserName(

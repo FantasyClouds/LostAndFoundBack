@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*将枚举值的name属性作为Value传回前端&#10;*增加用户设备关联表&#10;*去掉多余的//TODO">
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*修复建表未查重bug">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/TokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/UserDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/UserDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +223,9 @@
       <workItem from="1754742170656" duration="117000" />
       <workItem from="1754806393343" duration="10291000" />
       <workItem from="1754882048916" duration="3393000" />
-      <workItem from="1755079343263" duration="26000" />
+      <workItem from="1755079343263" duration="62000" />
+      <workItem from="1757289898084" duration="1668000" />
+      <workItem from="1757291584170" duration="494000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -414,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754891117472</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="*修复建表未查重bug">
+      <option name="closed" value="true" />
+      <created>1755079390561</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1755079390561</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,6 +466,7 @@
     <MESSAGE value="*改表字段的public为publish&#10;*修复未上传的文件&#10;*添加返回失物详情的框架类" />
     <MESSAGE value="*增加了LocationString直接通过字符串构造方法&#10;*添加FoundUnfinishedSearchDto对接类，用于和前端搜索对接&#10;*修改HomeItemDataController请求参数类型&#10;*将FoundUnfinishedDto删除，换为更统一的ItemDto数据传输类" />
     <MESSAGE value="*将枚举值的name属性作为Value传回前端&#10;*增加用户设备关联表&#10;*去掉多余的//TODO" />
-    <option name="LAST_COMMIT_MESSAGE" value="*将枚举值的name属性作为Value传回前端&#10;*增加用户设备关联表&#10;*去掉多余的//TODO" />
+    <MESSAGE value="*修复建表未查重bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="*修复建表未查重bug" />
   </component>
 </project>

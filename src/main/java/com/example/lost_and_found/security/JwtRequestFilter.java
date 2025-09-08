@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,6 +22,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     // 添加日志记录
     private static final Logger logger = LoggerFactory.getLogger(JwtRequestFilter.class);
 
+    // 添加属性绑定注解
+    @Value("${security.jwt.enabled:true}") // 默认值防止未配置时报错
+    private boolean jwtEnabled;
+
+    @Value("${security.jwt.mock-user:tester}")
+    private String mockUsername;
+
     // 改为构造器注入（Spring 4.3+ 单构造器可省略 @Autowired）
     private final UserDetailsService userDetailsService;
     private final JwtTokenUtil jwtTokenUtil;
@@ -35,6 +43,25 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain chain) throws ServletException, IOException {
+        // ================ 新增开发模式逻辑 ================
+        if (!jwtEnabled) {
+            // 创建模拟用户（带管理员权限）
+            UserDetails mockUser = org.springframework.security.core.userdetails.User.builder()
+                    .username(mockUsername)
+                    .password("")
+                    .authorities("ROLE_ADMIN") // 根据需要调整权限
+                    .build();
+
+            // 注入安全上下文
+            SecurityContextHolder.getContext().setAuthentication(
+                    new UsernamePasswordAuthenticationToken(mockUser, null, mockUser.getAuthorities())
+            );
+
+            chain.doFilter(request, response);
+            return; // 跳过后续JWT验证
+        }
+
+
         final String requestTokenHeader = request.getHeader("Authorization");
 
         // 优化空值判断逻辑
