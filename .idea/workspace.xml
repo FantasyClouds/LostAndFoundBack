@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*修复建表未查重bug">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/service/TokenService.java" afterDir="false" />
+    <list default="true" id="1f4ef69c-fce5-481b-b624-a3f4664e7a24" name="更改" comment="*增加了LocationString直接通过字符串构造方法&#10;*添加FoundUnfinishedSearchDto对接类，用于和前端搜索对接&#10;*修改HomeItemDataController请求参数类型&#10;*将FoundUnfinishedDto删除，换为更统一的ItemDto数据传输类">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/UserDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/UserDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/UserDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/security/JwtRequestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/ImgUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/ImgUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/controller/PublishItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/ItemColorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/dao/ItemColorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/ItemType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/lost_and_found/util/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,44 +93,44 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2wzQnRbEYXPOBjMFdUlQzV4b9lu" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JUnit.Test1ApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.lost_and_found [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.lost_and_found [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.test1 [test].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.Test1Application.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codes/Java/LostAndFound&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;应用程序.Test.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.Test1ApplicationTests.contextLoads.executor": "Run",
+    "Maven.lost_and_found [clean].executor": "Run",
+    "Maven.lost_and_found [install].executor": "Run",
+    "Maven.test1 [clean].executor": "Run",
+    "Maven.test1 [compile].executor": "Run",
+    "Maven.test1 [install].executor": "Run",
+    "Maven.test1 [test].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.Test1Application.executor": "Run",
+    "git-widget-placeholder": "正在合并 master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Codes/Java/LostAndFound",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.Test.executor": "Run"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言&quot;: [
-      &quot;MySQL&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL 方言": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -137,6 +144,37 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeItemDataControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lost_and_found" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.lost_and_found.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.lost_and_found.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.lost_and_found.controller.HomeItemDataControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HomeItemDataControllerTest.testSearchFoundUnFinished" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lost_and_found" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.lost_and_found.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.lost_and_found.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.lost_and_found.controller.HomeItemDataControllerTest" />
+      <option name="METHOD_NAME" value="testSearchFoundUnFinished" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,6 +204,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HomeItemDataControllerTest" />
+        <item itemvalue="JUnit.HomeItemDataControllerTest.testSearchFoundUnFinished" />
         <item itemvalue="JUnit.Test1ApplicationTests.contextLoads" />
         <item itemvalue="应用程序.Test" />
       </list>
@@ -174,8 +214,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
   </component>
@@ -222,10 +262,8 @@
       <workItem from="1754650381833" duration="589000" />
       <workItem from="1754742170656" duration="117000" />
       <workItem from="1754806393343" duration="10291000" />
-      <workItem from="1754882048916" duration="3393000" />
-      <workItem from="1755079343263" duration="62000" />
-      <workItem from="1757289898084" duration="1668000" />
-      <workItem from="1757291584170" duration="494000" />
+      <workItem from="1754882048916" duration="3244000" />
+      <workItem from="1755078729637" duration="1521000" />
     </task>
     <task id="LOCAL-00001" summary="初始的上传">
       <option name="closed" value="true" />
@@ -411,23 +449,7 @@
       <option name="project" value="LOCAL" />
       <updated>1754815960171</updated>
     </task>
-    <task id="LOCAL-00024" summary="*将枚举值的name属性作为Value传回前端&#10;*增加用户设备关联表&#10;*去掉多余的//TODO">
-      <option name="closed" value="true" />
-      <created>1754891117472</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1754891117472</updated>
-    </task>
-    <task id="LOCAL-00025" summary="*修复建表未查重bug">
-      <option name="closed" value="true" />
-      <created>1755079390561</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1755079390561</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,8 +487,6 @@
     <MESSAGE value="*补全Mapper&#10;*修改实体类，去除实体中的Color&#10;*补全上传图片功能&#10;*补全上传失物功能&#10;*区分ItemColor枚举类和ItemColorConnect实体类&#10;*增加Dto数据类方便数据库传输" />
     <MESSAGE value="*改表字段的public为publish&#10;*修复未上传的文件&#10;*添加返回失物详情的框架类" />
     <MESSAGE value="*增加了LocationString直接通过字符串构造方法&#10;*添加FoundUnfinishedSearchDto对接类，用于和前端搜索对接&#10;*修改HomeItemDataController请求参数类型&#10;*将FoundUnfinishedDto删除，换为更统一的ItemDto数据传输类" />
-    <MESSAGE value="*将枚举值的name属性作为Value传回前端&#10;*增加用户设备关联表&#10;*去掉多余的//TODO" />
-    <MESSAGE value="*修复建表未查重bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="*修复建表未查重bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="*增加了LocationString直接通过字符串构造方法&#10;*添加FoundUnfinishedSearchDto对接类，用于和前端搜索对接&#10;*修改HomeItemDataController请求参数类型&#10;*将FoundUnfinishedDto删除，换为更统一的ItemDto数据传输类" />
   </component>
 </project>
